@@ -634,11 +634,12 @@
   });
 
   var themePresets = {
-    /* four moods of the royal court — light-first, recoloured by the editor */
-    marigold: { burgundy: '#A63A46', deep: '#86293A', wine: '#5C1F2C', crimson: '#E0A878', champagne: '#C9922E', soft: '#A87A20', parchment: '#F8EEDD', ivory: '#FFFCF5', paper: '#FFFFFF', night: '#FDF7EC', nightDeep: '#F6EBD9', olive: '#6E7C52', oliveDeep: '#55663F', sage: '#8FA985', rose: '#E8A0B4', ink: '#4A2430', inkSoft: '#77414C', charcoal: '#A9868A' },
-    rani:     { burgundy: '#C13D68', deep: '#9E2B52', wine: '#5E1B3A', crimson: '#E7A9A0', champagne: '#C9922E', soft: '#A87A20', parchment: '#F9EDEA', ivory: '#FFFBFA', paper: '#FFFFFF', night: '#FDF2EF', nightDeep: '#F6E4E0', olive: '#87866E', oliveDeep: '#6B6B55', sage: '#B0AC9A', rose: '#EFB0C0', ink: '#542438', inkSoft: '#7F4A5C', charcoal: '#A98492' },
-    peacock:  { burgundy: '#2F6B52', deep: '#21543F', wine: '#1D3D30', crimson: '#A8C5B4', champagne: '#C9922E', soft: '#A87A20', parchment: '#EDF3EC', ivory: '#FBFDFB', paper: '#FFFFFF', night: '#F3F8F3', nightDeep: '#E4EFE6', olive: '#6E7C52', oliveDeep: '#55663F', sage: '#8FA985', rose: '#C9ABBA', ink: '#254237', inkSoft: '#4C6A5C', charcoal: '#7E9A8C' },
-    sindoor:  { burgundy: '#8C2332', deep: '#6E1826', wine: '#4A1420', crimson: '#D9A08E', champagne: '#C08A2A', soft: '#A1721E', parchment: '#F8EBE2', ivory: '#FFFAF4', paper: '#FFFFFF', night: '#FBF2E9', nightDeep: '#F3E5D7', olive: '#8A8062', oliveDeep: '#6E6549', sage: '#B3AB92', rose: '#E4AFA6', ink: '#451A24', inkSoft: '#703C46', charcoal: '#A2857E' }
+    /* four moods of the royal court — deep zari grounds, gold illumination,
+       and warm ivory card inserts, the language of the Indian wedding card */
+    marigold: { burgundy: '#8C2332', deep: '#6B1826', wine: '#3D0A14', crimson: '#C8502F', champagne: '#D3A63E', soft: '#B0842C', parchment: '#F3E4C8', ivory: '#FAF1DE', paper: '#FFFDF4', night: '#4E0E1B', nightDeep: '#3B0A14', olive: '#3E6B4F', oliveDeep: '#2C513B', sage: '#7FA489', rose: '#D66C8C', ink: '#471622', inkSoft: '#7C4650', charcoal: '#9A757C' },
+    rani:     { burgundy: '#A02853', deep: '#7C1A40', wine: '#42081F', crimson: '#C8502F', champagne: '#D3A63E', soft: '#B0842C', parchment: '#F7E6E4', ivory: '#FBEFEA', paper: '#FFFBF6', night: '#4A0E2A', nightDeep: '#38081F', olive: '#4E6B4A', oliveDeep: '#375037', sage: '#93A98E', rose: '#E07BA0', ink: '#4E1230', inkSoft: '#82455E', charcoal: '#A2788A' },
+    peacock:  { burgundy: '#1F5D46', deep: '#164634', wine: '#0B2C21', crimson: '#3E7D5C', champagne: '#D3A63E', soft: '#B0842C', parchment: '#EAF1E3', ivory: '#F2F7E9', paper: '#FCFEF6', night: '#0F3A2C', nightDeep: '#0A2B21', olive: '#3E6B4F', oliveDeep: '#2C513B', sage: '#8FAF94', rose: '#C88BA6', ink: '#123528', inkSoft: '#44685A', charcoal: '#7E9A8C' },
+    sindoor:  { burgundy: '#96202C', deep: '#701320', wine: '#40080F', crimson: '#C8502F', champagne: '#C9A02F', soft: '#A87F22', parchment: '#F6E3CE', ivory: '#FAEFDC', paper: '#FFFCF2', night: '#430912', nightDeep: '#33060D', olive: '#6B6242', oliveDeep: '#524A30', sage: '#A29B7E', rose: '#D68090', ink: '#43101A', inkSoft: '#7A3E48', charcoal: '#A2807E' }
   };
 
   function applyTheme() {

@@ -76,8 +76,8 @@ export async function onRequestPost(context) {
     return json({ error: "Enter a valid email address, or leave the reply email empty." }, 422);
   }
 
-  const templateId = typeof config.templateId === "string" ? config.templateId : "vesperwood";
-  if (templateId !== "vesperwood") {
+  const templateId = typeof config.templateId === "string" ? config.templateId : "shaadi";
+  if (templateId !== "shaadi") {
     return json({ error: "This invitation template is not available." }, 422);
   }
 
