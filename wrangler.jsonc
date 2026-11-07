@@ -15,7 +15,7 @@
       // One-time setup: create the D1 database, then paste its id here.
       //   npx wrangler d1 create shaadi-invitations
       // (DEPLOY.md walks through this step by step.)
-      "database_id": "406017b3-d9a3-42d2-a611-eb28a59bebeb"
+      "database_id": "b0648fea-79a4-49ab-b278-da34256e959c"
     }
   ]
 }
