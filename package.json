@@ -1,15 +1,15 @@
 {
-  "name": "amoris-invitation",
+  "name": "shaadi-invitation",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Amoris \u2014 a fairy-tale garden wedding invitation. Cloudflare Workers (static assets + API) + D1",
+  "description": "Shaadi \u2014 a royal Indian wedding invitation. Cloudflare Workers (static assets + API) + D1",
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "npm run build && npm run db:migrate:local && wrangler dev --port 8788",
     "deploy": "npm run build && wrangler deploy",
-    "db:migrate:local": "wrangler d1 migrations apply amoris-invitations --local",
-    "db:migrate:remote": "wrangler d1 migrations apply amoris-invitations --remote"
+    "db:migrate:local": "wrangler d1 migrations apply shaadi-invitations --local",
+    "db:migrate:remote": "wrangler d1 migrations apply shaadi-invitations --remote"
   },
   "devDependencies": {
     "wrangler": "^4.156.0"

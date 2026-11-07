@@ -1,11 +1,10 @@
-# Amoris — a romantic garden-swing wedding invitation
+# Shaadi — a royal Indian wedding invitation
 
-A romantic garden at first light: rose-ivory skies washed with blush
-and dusty rose, rose-gold ribbonwork and antique gold shimmer, sage
-rose-vines breathing in the understory, petals and little hearts
-drifting over the names, the couple swaying on their garden swing,
-and twin ivory garden doors beneath a rose arch that part onto the
-celebration. Fully customisable
+A royal Indian wedding at first light: sandalwood-ivory skies washed
+with marigold gold and sindoor red, paisley and lotus motifs breathing
+in the understory, marigold petals drifting over the names, the bride
+and groom beneath a mehrab arch, and twin ivory doors beneath a
+marigold toran that part onto the celebration. Fully customisable
 in the browser with a guided, auto-saving visual editor — then
 published live with one click on Cloudflare.
 
@@ -35,7 +34,7 @@ published live with one click on Cloudflare.
 
 ```bash
 npm install
-npx wrangler d1 migrations apply amoris-invitations --local
+npx wrangler d1 migrations apply shaadi-invitations --local
 npm run build
 npx wrangler dev            # http://localhost:8788
 ```
@@ -49,5 +48,5 @@ guest replies, the submissions page — goes live.
 
 `DEPLOY.md` walks through it step by step (dashboard path and CLI
 path): create the D1 database, paste its id into `wrangler.jsonc`,
-run `npx wrangler d1 migrations apply amoris-invitations --remote`,
+run `npx wrangler d1 migrations apply shaadi-invitations --remote`,
 then `npm run build && npx wrangler deploy`.

@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
-   AURELIA · responsive.css
-   The fairyland breathes at every size — wide desk, small phone.
+   SHAADI · responsive.css
+   The court breathes at every size — wide desk, small phone.
    ═══════════════════════════════════════════════════════════════ */
 
 @media (max-width: 1080px) {
@@ -19,7 +19,11 @@
   }
 
   .story-aside { padding-top: 0; }
-  .story-rose { margin-inline: auto; }
+  .story-rose {
+    position: static;
+    margin: 1.4rem auto 0;
+    transform: none;
+  }
 
   .particulars-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -79,8 +83,8 @@
   .count-num { font-size: clamp(1.9rem, 9vw, 2.6rem); }
 
   .countdown-wreath {
-    width: clamp(140px, 34vw, 196px);
-    top: calc(var(--pad-section) + .1rem);
+    width: clamp(200px, 56vw, 300px);
+    opacity: .16;
   }
 
   .std-numerals { font-size: clamp(2rem, 8.8vw, 3.4rem); }
@@ -143,6 +147,8 @@
 
   .gate-pediment { top: -28px; }
 
+  .gate-toran { top: -34px; width: 110%; }
+
   .opening__corner { opacity: .34; }
 
   .opening__names { font-size: clamp(2.4rem, 12vw, 3.6rem); }
@@ -168,6 +174,7 @@
   .opening__open { margin-top: .9rem; }
   .opening__skip { margin-top: .6rem; }
   .gate-pediment { top: -24px; }
+  .gate-toran { top: -44px; }
   .opening__dust { display: none; }
 }
 

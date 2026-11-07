@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   AMORIS · main.js
+   SHAADI · main.js
    Content injection · navigation · palette swatches · wedding-day
    string of lights · countdown · calendar files · reveals ·
    parallax · audio. Everything degrades gracefully:
@@ -126,6 +126,7 @@
       prata: "'Prata', serif",
       marcellus: "'Marcellus', serif",
       italiana: "'Italiana', serif",
+      rozhaOne: "'Rozha One', serif",
       libreCaslon: "'Libre Caslon Text', serif"
     },
     display: {
@@ -173,7 +174,7 @@
     Object.keys(fontFamilies).forEach(function (role) {
       var choices = fontFamilies[role];
       var selected = choices[fonts[role]] || choices[{
-        editorial: 'playfair',
+        editorial: 'rozhaOne',
         display: 'ebGaramond',
         script: 'greatVibes',
         hand: 'caveat',
@@ -228,52 +229,55 @@
   /* Removable & recolourable pieces of the suite — keyed in HTML
      via data-element-key and hidden through config.hiddenElements. */
   var elementLabels = {
-    'opening-florals-top': 'Fern spray · top',
-    'opening-florals-bottom': 'Fern spray · bottom',
-    'opening-glow': 'Firefly glow',
+    'opening-corner-tl': 'Marigold spray · top left',
+    'opening-corner-tr': 'Marigold spray · top right',
+    'opening-corner-bl': 'Marigold spray · bottom left',
+    'opening-corner-br': 'Marigold spray · bottom right',
+    'opening-dust': 'The petal drift',
+    'opening-glow': 'Diya glow',
     'opening-watermark': 'Ampersand watermark',
     'opening-eyebrow': 'Opening introduction',
     'opening-names': 'Opening names',
-    'fireflies': 'The fireflies',
-    'envelope-shadow': 'Door shadow',
-    'envelope-stamps': 'Gate finial',
-    'envelope-flap': 'The bower doors',
-    'envelope-address': 'Gate inscription',
-    'envelope-seal': 'The fern medallion',
+    'fireflies': 'The petal drift',
+    'gate-toran': 'The marigold toran',
+    'gate-pediment': 'The mehrab arch',
+    'envelope-shadow': 'Gate shadow',
+    'gate-crest-art': 'The gold-foil medallion',
+    'envelope-seal': 'The medallion',
     'opening-hint': 'Invitation hint',
     'open-button': 'Open button',
-    'invite-spray-top': 'The fern medallion',
-    'invite-spray-bottom': 'Hero ornament',
+    'invite-spray-top': 'The couple beneath the arch',
+    'hero-dust': 'Hero petal drift',
     'folio-quote': 'Keepsake quote card',
     'folio-note-one': 'Folio note i',
-    'folio-note-two': 'Folio note ii',
-    'folio-note-three': 'Folio note iii',
-    'story-garland-top': 'Story garland',
-    'story-garland-bottom': 'Story pressed fern',
+    'story-peacock': 'The peacock',
     'story-caption': 'Story inscription',
     'story-note': 'Story handwritten note',
-    'story-keepsake': 'Stamp & postmark',
-    'std-glow': 'Firefly wash',
-    'std-candles': 'The fern emblem',
-    'std-note': 'The announcement plate',
+    'std-glow': 'Diya wash',
+    'std-candles': 'The lotus emblem',
+    'std-note': 'The shagun plate',
     'std-seal': 'Save-the-date seal',
-    'detail-ceremony': 'Details · ceremony',
-    'detail-reception': 'Details · reception',
-    'detail-reply': 'Details · kindly reply',
+    'detail-ceremony': 'Events · sangeet',
+    'detail-reception': 'Events · pheras',
+    'detail-reply': 'Events · kindly reply',
+    'detail-haldi': 'Events · haldi',
+    'detail-mehndi': 'Events · mehndi',
+    'detail-feast': 'Events · reception',
     'details-bouquet': 'The particulars',
-    'details-arch': 'Details ornament',
+    'details-arch': 'Events ornament',
     'palette-swatches': 'Palette swatches',
     'palette-dresscode': 'Dress code note',
     'day-words': 'The garland of moments',
-    'venue-lights': 'The trellis arbor',
-    'venue-ornament': 'The glasshouse',
+    'venue-lights': 'The garland swag',
+    'venue-ornament': 'The mandap',
+    'venue-diya': 'The diya pair',
     'rsvp-watermark': 'RSVP watermark',
     'rsvp-ornament': 'RSVP ornament',
     'countdown-clock': 'Countdown clock',
-    'countdown-wreath': 'The fern wreath',
+    'countdown-wreath': 'The rangoli mandala',
     'closing-swag': 'Closing garland',
     'closing-message': 'Closing message',
-    'closing-seal': 'Closing wax seal',
+    'closing-seal': 'Closing seal',
     'footer-ornament': 'Footer ornament'
   };
 
@@ -630,15 +634,15 @@
   });
 
   var themePresets = {
-    /* four moods of the romance — light-first, recoloured by the editor */
-    twilight: { burgundy: '#C18A70', deep: '#A66B54', wine: '#5B3644', crimson: '#CDA3B0', champagne: '#C39B63', soft: '#AC8049', parchment: '#F8EEE8', ivory: '#FFFCFA', paper: '#FFFFFF', night: '#FBF3EF', nightDeep: '#F4E7E2', olive: '#87927A', oliveDeep: '#6A7661', sage: '#B0BAA6', rose: '#E8B9C4', ink: '#523540', inkSoft: '#7C5964', charcoal: '#A58B93' },
-    blossom:  { burgundy: '#C07E93', deep: '#A05F76', wine: '#5E3548', crimson: '#D4A2B6', champagne: '#C39B63', soft: '#AC8049', parchment: '#F9EDEE', ivory: '#FFFBFB', paper: '#FFFFFF', night: '#FBF0F0', nightDeep: '#F5E3E4', olive: '#8A8672', oliveDeep: '#6D6A58', sage: '#B2AC9C', rose: '#EFB4C6', ink: '#563546', inkSoft: '#7F5566', charcoal: '#A88793' },
-    gilded:   { burgundy: '#BE8A54', deep: '#9C6C38', wine: '#5F4438', crimson: '#D3B4A0', champagne: '#BC8A3C', soft: '#A3742F', parchment: '#F8EFDD', ivory: '#FFFCF2', paper: '#FFFFFF', night: '#FBF4E7', nightDeep: '#F4E9D5', olive: '#8F8663', oliveDeep: '#726B4E', sage: '#B5AC8E', rose: '#E9BCA9', ink: '#544036', inkSoft: '#7E654F', charcoal: '#A6917B' },
-    moonlit:  { burgundy: '#9AA6B8', deep: '#7A889D', wine: '#3E4A5C', crimson: '#A8BACB', champagne: '#C4A46C', soft: '#AA8B52', parchment: '#EEF1F4', ivory: '#FBFCFE', paper: '#FFFFFF', night: '#F2F5F9', nightDeep: '#E5ECF2', olive: '#7E8C8A', oliveDeep: '#62706F', sage: '#A2B2B0', rose: '#C5ABB9', ink: '#37455A', inkSoft: '#5C7089', charcoal: '#8698AB' }
+    /* four moods of the royal court — light-first, recoloured by the editor */
+    marigold: { burgundy: '#A63A46', deep: '#86293A', wine: '#5C1F2C', crimson: '#E0A878', champagne: '#C9922E', soft: '#A87A20', parchment: '#F8EEDD', ivory: '#FFFCF5', paper: '#FFFFFF', night: '#FDF7EC', nightDeep: '#F6EBD9', olive: '#6E7C52', oliveDeep: '#55663F', sage: '#8FA985', rose: '#E8A0B4', ink: '#4A2430', inkSoft: '#77414C', charcoal: '#A9868A' },
+    rani:     { burgundy: '#C13D68', deep: '#9E2B52', wine: '#5E1B3A', crimson: '#E7A9A0', champagne: '#C9922E', soft: '#A87A20', parchment: '#F9EDEA', ivory: '#FFFBFA', paper: '#FFFFFF', night: '#FDF2EF', nightDeep: '#F6E4E0', olive: '#87866E', oliveDeep: '#6B6B55', sage: '#B0AC9A', rose: '#EFB0C0', ink: '#542438', inkSoft: '#7F4A5C', charcoal: '#A98492' },
+    peacock:  { burgundy: '#2F6B52', deep: '#21543F', wine: '#1D3D30', crimson: '#A8C5B4', champagne: '#C9922E', soft: '#A87A20', parchment: '#EDF3EC', ivory: '#FBFDFB', paper: '#FFFFFF', night: '#F3F8F3', nightDeep: '#E4EFE6', olive: '#6E7C52', oliveDeep: '#55663F', sage: '#8FA985', rose: '#C9ABBA', ink: '#254237', inkSoft: '#4C6A5C', charcoal: '#7E9A8C' },
+    sindoor:  { burgundy: '#8C2332', deep: '#6E1826', wine: '#4A1420', crimson: '#D9A08E', champagne: '#C08A2A', soft: '#A1721E', parchment: '#F8EBE2', ivory: '#FFFAF4', paper: '#FFFFFF', night: '#FBF2E9', nightDeep: '#F3E5D7', olive: '#8A8062', oliveDeep: '#6E6549', sage: '#B3AB92', rose: '#E4AFA6', ink: '#451A24', inkSoft: '#703C46', charcoal: '#A2857E' }
   };
 
   function applyTheme() {
-    var themeName = Object.prototype.hasOwnProperty.call(themePresets, cfg.theme) ? cfg.theme : 'twilight';
+    var themeName = Object.prototype.hasOwnProperty.call(themePresets, cfg.theme) ? cfg.theme : 'marigold';
     var colors = themePresets[themeName];
     var root = document.documentElement;
     root.style.setProperty('--burgundy', colors.burgundy);
@@ -987,10 +991,10 @@
       var lines = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',
-        'PRODID:-//Amoris//Wedding Invitation//EN',
+        'PRODID:-//Shaadi//Wedding Invitation//EN',
         'CALSCALE:GREGORIAN',
         'BEGIN:VEVENT',
-        'UID:' + icsUTC(data.start.getTime()) + '-amoris@invitation',
+        'UID:' + icsUTC(data.start.getTime()) + '-shaadi@invitation',
         'DTSTAMP:' + icsUTC(Date.now()),
         'DTSTART:' + icsUTC(data.start.getTime()),
         'DTEND:' + icsUTC(data.end.getTime()),

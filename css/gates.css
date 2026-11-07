@@ -1,15 +1,15 @@
 /* ═══════════════════════════════════════════════════════════════
-   AURELIA · gates.css
-   The opening — the bower gate of the fairyland. A rose-vine
-   arch crowns two luminous ivory doors etched with rose-gold
-   filigree; gilded rails carry little wish-charms, toadstools
-   and dewdrops wait at the threshold, and the winged medallion
-   seals the heart of the doors. A wish-trail of pixie dust arcs
-   overhead and morning light breathes through the seam.
-   Touch, and the doors part onto the celebration.
+   SHAADI · gates.css
+   The opening — the dwar of the palace court. A mehrab arch
+   crowned by a marigold toran with hanging bells; two luminous
+   ivory doors etched with jali filigree; gilded rails carry
+   little bell-charms, a rangoli waits at the threshold, and the
+   rangoli medallion seals the heart of the doors. A drift of
+   marigold petals arcs overhead and diya light breathes through
+   the seam. Touch, and the doors part onto the celebration.
    · .is-open          : GSAP drives the parting (inline transforms)
    · .is-fallback-open : pure-CSS keyframes when GSAP is absent
-   · .is-leaving       : the cover crossfades into the glade
+   · .is-leaving       : the cover crossfades into the court
    · prefers-reduced-motion : quiet, near-instant handover
    ═══════════════════════════════════════════════════════════════ */
 
@@ -27,10 +27,10 @@
       color-mix(in srgb, var(--candle) 18%, transparent) 38%,
       transparent 66%),
     radial-gradient(120% 84% at 50% 116%,
-      color-mix(in srgb, var(--rose) 26%, transparent) 0%,
+      color-mix(in srgb, var(--crimson) 26%, transparent) 0%,
       transparent 58%),
     radial-gradient(110% 90% at -12% 50%,
-      color-mix(in srgb, var(--crimson) 12%, transparent) 0%,
+      color-mix(in srgb, var(--rose) 12%, transparent) 0%,
       transparent 56%),
     radial-gradient(110% 90% at 112% 52%,
       color-mix(in srgb, var(--sage) 14%, transparent) 0%,
@@ -39,7 +39,7 @@
   box-shadow: inset 0 0 20vmax color-mix(in srgb, var(--wine) 7%, transparent);
 }
 
-/* the morning air — a quiet field of fixed wish-sparkles, one tile */
+/* the morning air — a quiet field of fixed diya-sparkles, one tile */
 #opening::before {
   content: "";
   position: absolute;
@@ -47,7 +47,7 @@
   pointer-events: none;
   background-image: url('../assets/orn/star-tile.svg');
   background-size: 520px 520px;
-  opacity: .38;   /* wish-sparkles found only on a closer look */
+  opacity: .38;   /* sparkles found only on a closer look */
 }
 
 .opening.is-leaving {
@@ -84,7 +84,13 @@
   pointer-events: none;
 }
 
-/* ── wish-stars — four-point sparkles breathing in the light ───── */
+@keyframes ff-blink {
+  0%, 100% { opacity: var(--o, .4); }
+  46%      { opacity: calc(var(--o, .4) * .2); }
+  62%      { opacity: var(--o, .4); }
+}
+
+/* ── diya-sparkles — four-point sparkles breathing in the light ── */
 
 .opening__sparkle {
   position: absolute;
@@ -133,7 +139,7 @@
   62%      { opacity: calc(var(--o, .4) * .5); transform: scale(.72); }
 }
 
-/* ── the wish-trail — pixie dust arcing over the names ─────────── */
+/* ── the petal drift — marigold petals arcing over the names ───── */
 
 .opening__dust {
   position: absolute;
@@ -158,7 +164,7 @@
   50%      { transform: translateX(-50%) translateY(-7px); }
 }
 
-/* ── corner sprays, watermark, glow ────────────────────────────── */
+/* ── corner marigold sprays, watermark, glow ───────────────────── */
 
 .opening__corner {
   position: absolute;
@@ -197,7 +203,7 @@
   background: radial-gradient(circle,
     color-mix(in srgb, var(--candle) 34%, transparent) 0%,
     color-mix(in srgb, var(--candle) 16%, transparent) 30%,
-    color-mix(in srgb, var(--rose) 14%, transparent) 58%,
+    color-mix(in srgb, var(--crimson) 14%, transparent) 58%,
     transparent 74%);
   opacity: .6;
   pointer-events: none;
@@ -227,7 +233,7 @@
   text-shadow:
     0 1px 0 color-mix(in srgb, white 60%, transparent),
     0 2px 30px color-mix(in srgb, var(--candle) 30%, transparent);
-  margin-bottom: clamp(1rem, 3vh, 1.8rem);
+  margin-bottom: clamp(2.2rem, 6vh, 3.2rem);
 }
 
 /* ── the gate stage ────────────────────────────────────────────── */
@@ -240,6 +246,7 @@
   align-items: center;
 }
 
+/* the mehrab arch outline above the doors */
 .gate-pediment {
   position: absolute;
   top: -40px;
@@ -255,7 +262,19 @@
   filter: drop-shadow(0 0 16px color-mix(in srgb, var(--candle) 22%, transparent));
 }
 
-/* the doorway outline — a rose-gold arch just outside the doors */
+/* the toran garland crowning the whole stage */
+.gate-toran {
+  position: absolute;
+  top: -58px;
+  left: -7%;
+  width: 114%;
+  opacity: .95;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px color-mix(in srgb, var(--wine) 18%, transparent));
+}
+
+/* the doorway outline — a marigold-gold arch just outside the doors */
 .gate-stage::after {
   content: "";
   position: absolute;
@@ -298,7 +317,7 @@
   pointer-events: none;
 }
 
-/* ── the two door leaves — luminous ivory, etched in rose gold ─── */
+/* ── the two door leaves — luminous ivory, etched in sindoor ───── */
 
 .gate {
   position: absolute;
@@ -324,7 +343,7 @@
     inset 0 -18px 44px color-mix(in srgb, var(--bark) 22%, transparent);
 }
 
-/* panel seams — two slender rose-gold hairlines per leaf */
+/* panel seams — two slender sindoor hairlines per leaf */
 .gate__planks {
   position: absolute;
   inset: 0;
@@ -336,7 +355,7 @@
     transparent calc(66.7% + 1px), transparent 100%);
 }
 
-/* the glow of the glade breathing up from the threshold */
+/* the glow of the court breathing up from the threshold */
 .gate__panel::after {
   content: "";
   position: absolute;
@@ -356,7 +375,7 @@
 
 .gate--right .gate__frame { border-radius: 0 999px 5px 0; }
 
-/* the climbing filigree on each leaf */
+/* the climbing jali filigree on each leaf */
 .gate__scroll {
   position: absolute;
   inset: 0;
@@ -372,7 +391,7 @@
 
 .gate--right .gate__scroll { transform: scaleX(-1); }
 
-/* delicate gilded rails with wish-star finials */
+/* delicate gilded rails with bell-charm finials */
 .gate__band {
   position: absolute;
   left: 7%;
@@ -405,7 +424,7 @@
 .gate__band--top { top: 22%; }
 .gate__band--bottom { top: 74%; }
 
-/* the little wish-charm hung from the lower rail */
+/* the little bell-charm hung from the lower rail */
 .gate__ring {
   position: absolute;
   top: 77.5%;
@@ -434,7 +453,7 @@
 .gate--left .gate__ring { right: 12%; }
 .gate--right .gate__ring { left: 12%; }
 
-/* ── the winged medallion, sealed at the heart of the doors ────── */
+/* ── the rangoli medallion, sealed at the heart of the doors ───── */
 
 .gate-crest {
   position: absolute;
@@ -447,7 +466,7 @@
   pointer-events: none;
 }
 
-/* a soft luminous glass disc behind the winged crest */
+/* a soft luminous glass disc behind the rangoli crest */
 .gate-crest::before {
   content: "";
   position: absolute;
@@ -487,11 +506,13 @@
   place-items: center;
   padding-top: .3em;
   font-size: clamp(1.5rem, 4.5vw, 2.1rem);
-  color: var(--gilding-deep);
-  text-shadow: 0 1px 0 rgba(255, 253, 246, .8);
+  color: var(--wine);
+  text-shadow:
+    0 1px 0 color-mix(in srgb, white 70%, transparent),
+    0 2px 10px color-mix(in srgb, white 45%, transparent);
 }
 
-/* ── the seam of morning light between the leaves ──────────────── */
+/* ── the seam of diya light between the leaves ─────────────────── */
 
 .gate-seam {
   position: absolute;
@@ -512,7 +533,7 @@
   pointer-events: none;
 }
 
-/* ── the glade at the threshold — toadstools, grass, dew ───────── */
+/* ── the rangoli at the threshold ──────────────────────────────── */
 
 .gate-threshold {
   position: absolute;

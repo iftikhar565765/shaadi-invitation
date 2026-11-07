@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   AMORIS · envelope.js
+   SHAADI · envelope.js
    The opening — the golden gates of the palace. The crest lifts,
    the seam blooms with candlelight, and the gates part.
    · GSAP choreography when GSAP is available

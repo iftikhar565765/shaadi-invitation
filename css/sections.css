@@ -1,13 +1,12 @@
 /* ═══════════════════════════════════════════════════════════════
-   AURELIA · sections.css
-   The ten scenes of the invitation, staged in a fairyland at
-   first light: the bower arch, the storybook page, the wish
-   plate, the particulars, the palette, the garland of moments,
-   the glade pavilion, the blossom-wreath countdown, the reply
-   card, the closing note and the footer.
+   SHAADI · sections.css
+   The scenes of the royal court — every section drawn from
+   scratch in the Indian wedding language: mehrab arches, jali
+   niches, paisley vines, marigold garlands, diya light and
+   rangoli medallions, set on sandalwood-ivory paper.
    ═══════════════════════════════════════════════════════════════ */
 
-/* ══ Ⅰ · THE INVITATION — beneath the bower arch ═══════════════ */
+/* ══ Ⅰ · THE INVITATION — beneath the mehrab arch ══════════════ */
 
 .scene--hero {
   min-height: 100svh;
@@ -26,38 +25,43 @@
   background: radial-gradient(circle,
     color-mix(in srgb, var(--candle) 34%, transparent) 0%,
     color-mix(in srgb, var(--candle) 14%, transparent) 32%,
-    color-mix(in srgb, var(--rose) 12%, transparent) 56%,
+    color-mix(in srgb, var(--crimson) 12%, transparent) 56%,
     transparent 74%);
   pointer-events: none;
 }
 
-/* the wish-trail — pixie dust sweeping over the names */
+/* the petal drift — marigold petals sweeping over the names */
 .hero-dust {
   position: absolute;
-  top: clamp(-6.5rem, -9vh, -4rem);
+  top: clamp(.4rem, 1.4vh, 1.4rem);
   left: 50%;
-  width: min(720px, 94vw);
+  width: min(620px, 92vw);
   transform: translateX(-50%);
   color: var(--champagne-soft);
   fill: none;
   stroke: currentColor;
   pointer-events: none;
-  opacity: .85;
-  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--candle) 26%, transparent));
-  animation: dust-float 9s ease-in-out infinite;
+  opacity: .8;
+  animation: hero-dust-float 9s ease-in-out infinite;
 }
 
 .hero-dust { --fx-fill: .48; }
 
+@keyframes hero-dust-float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(-8px); }
+}
+
+/* paisley vines breathing at the hero's sides */
 .hero-frond {
   position: absolute;
-  bottom: 8%;
-  width: clamp(54px, 7vw, 96px);
-  color: var(--sage);
+  top: clamp(6rem, 16vh, 10rem);
+  width: clamp(44px, 5vw, 70px);
+  color: var(--champagne-soft);
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.4;
-  opacity: .5;
+  stroke-width: 1.6;
+  opacity: .55;
   pointer-events: none;
 }
 
@@ -72,14 +76,34 @@
   text-align: center;
 }
 
-/* the swing — the couple on their garden swing, swaying softly */
+/* the couple beneath their mehrab arch */
 .hero-crest {
   position: relative;
-  width: clamp(230px, 30vw, 340px);
-  aspect-ratio: 827 / 1100;
-  margin: -.6rem 0 clamp(.4rem, 1.6vh, 1rem);
-  transform-origin: 50% 4%;
-  animation: swing-sway 7.4s ease-in-out infinite alternate;
+  width: clamp(230px, 30vw, 330px);
+  aspect-ratio: 685 / 1107;
+  margin: 1.2rem 0 clamp(.4rem, 1.6vh, 1rem);
+}
+
+/* the mehrab arch drawn behind the couple */
+.hero-crest::before {
+  content: "";
+  position: absolute;
+  inset: -9% -13% -3%;
+  border: 1.5px solid color-mix(in srgb, var(--champagne) 48%, transparent);
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+  pointer-events: none;
+  box-shadow: 0 0 30px color-mix(in srgb, var(--candle) 20%, transparent) inset;
+}
+
+.hero-crest::after {
+  content: "";
+  position: absolute;
+  inset: -4.5% -8.5% -1.5%;
+  border: 1px solid color-mix(in srgb, var(--burgundy) 34%, transparent);
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+  pointer-events: none;
 }
 
 .hero-crest__art {
@@ -87,15 +111,6 @@
   height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 14px 28px color-mix(in srgb, var(--wine) 16%, transparent));
-}
-
-@keyframes swing-sway {
-  0%   { transform: rotate(-1.1deg); }
-  100% { transform: rotate(1.1deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-crest { animation: none; }
 }
 
 .hero-crest__initials { display: none; }
@@ -136,20 +151,19 @@
 }
 
 .hero-divider {
-  width: clamp(200px, 26vw, 300px);
-  margin-top: clamp(1.6rem, 4vh, 2.6rem);
+  width: clamp(220px, 30vw, 300px);
+  margin-top: clamp(1.6rem, 3.6vh, 2.6rem);
   color: var(--champagne-soft);
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.4;
-  opacity: .95;
+  stroke-width: 1.5;
 }
 
 .hero-words {
   margin-top: clamp(1.2rem, 3vh, 2rem);
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--fs-small);
-  letter-spacing: .16em;
+  letter-spacing: .3em;
   text-transform: uppercase;
   color: var(--burgundy);
 }
@@ -163,7 +177,7 @@
 
 .hero-scroll {
   position: absolute;
-  bottom: clamp(1.2rem, 4vh, 2.6rem);
+  bottom: clamp(-2.6rem, -4vh, -1.6rem);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -171,30 +185,38 @@
   align-items: center;
   gap: .5rem;
   text-decoration: none;
+  opacity: .8;
+  transition: opacity var(--t-fast) var(--ease-soft);
 }
+
+.hero-scroll:hover { opacity: 1; }
 
 .hero-scroll__line {
   width: 1px;
-  height: clamp(30px, 6vh, 52px);
-  background: linear-gradient(to bottom, transparent, var(--champagne));
-  animation: scroll-pulse 2.6s var(--ease-soft) infinite;
-}
-
-@keyframes scroll-pulse {
-  0%   { transform: scaleY(.2); transform-origin: top; opacity: .2; }
-  46%  { transform: scaleY(1); opacity: 1; }
-  100% { transform: scaleY(.2); transform-origin: top; opacity: .2; }
+  height: clamp(2.2rem, 6vh, 3.6rem);
+  background: linear-gradient(to bottom,
+    transparent, color-mix(in srgb, var(--champagne) 62%, transparent));
 }
 
 .hero-scroll__bud {
-  width: 22px;
+  width: 26px;
   color: var(--champagne-soft);
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.6;
+  stroke-width: 1.7;
+  animation: bud-sway 5.2s ease-in-out infinite alternate;
 }
 
-/* ══ Ⅱ · THEIR STORY — a page from the storybook ══════════════ */
+@keyframes bud-sway {
+  0%   { transform: rotate(-6deg); }
+  100% { transform: rotate(6deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-dust, .hero-scroll__bud { animation: none; }
+}
+
+/* ══ Ⅱ · THEIR STORY — a page from the family album ═══════════ */
 
 .scene--story { overflow: clip; }
 
@@ -204,10 +226,10 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(60% 48% at 12% 18%,
-      color-mix(in srgb, var(--rose) 14%, transparent) 0%, transparent 70%),
-    radial-gradient(52% 44% at 90% 84%,
-      color-mix(in srgb, var(--crimson) 12%, transparent) 0%, transparent 70%);
+    radial-gradient(52% 42% at 90% 16%,
+      color-mix(in srgb, var(--sage) 14%, transparent) 0%, transparent 70%),
+    radial-gradient(48% 40% at 6% 84%,
+      color-mix(in srgb, var(--rose) 14%, transparent) 0%, transparent 70%);
 }
 
 .story-grid {
@@ -259,66 +281,65 @@
     color-mix(in srgb, var(--paper-raised) 90%, white 10%),
     color-mix(in srgb, var(--ivory) 92%, var(--candle) 8%));
   border: 1px solid color-mix(in srgb, var(--champagne) 30%, transparent);
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: var(--shadow-card);
 }
 
 .story-quote__mark {
-  position: absolute;
-  top: .35em;
-  left: .35em;
-  font-size: 4.4rem;
-  line-height: 1;
-  color: color-mix(in srgb, var(--rose) 55%, transparent);
-  pointer-events: none;
+  display: block;
+  font-size: 3rem;
+  line-height: .6;
+  color: var(--champagne-soft);
+  margin-bottom: 1rem;
 }
 
 .story-quote__text {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
-  font-style: italic;
+  font-size: clamp(1.2rem, 2.6vw, 1.42rem);
   line-height: 1.55;
   color: var(--moonlit);
 }
 
 .story-quote__label {
-  margin-top: 1.1em;
+  margin-top: 1.1rem;
   color: var(--night-faint);
 }
 
 .story-aside-note {
   text-align: center;
-  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-size: clamp(1.7rem, 3.4vw, 2.2rem);
   color: var(--gilding-deep);
+  opacity: .9;
 }
 
 .story-captions {
   display: flex;
   flex-direction: column;
-  gap: .55rem;
+  gap: .9rem;
   align-items: center;
 }
 
 .story-caption {
   display: flex;
   align-items: center;
-  gap: .7rem;
-  font-family: var(--font-hand);
-  font-size: 1.12rem;
-  color: var(--ink-soft);
+  gap: .8rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--night-ink);
 }
 
 .story-caption svg {
-  width: 74px;
+  width: 64px;
   color: var(--champagne-soft);
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.6;
+  stroke-width: 1.5;
   opacity: .85;
-  flex: none;
+  --fx-fill: .3;
 }
 
-/* ══ Ⅲ · SAVE THE DATE — the wish plate ═══════════════════════ */
+/* ══ Ⅲ · SAVE THE DATE — the shagun plate ═════════════════════ */
 
 .scene--std { overflow: clip; }
 
@@ -331,7 +352,7 @@
   transform: translate(-50%, -50%);
   background: radial-gradient(circle,
     color-mix(in srgb, var(--candle) 26%, transparent) 0%,
-    color-mix(in srgb, var(--rose) 12%, transparent) 44%,
+    color-mix(in srgb, var(--crimson) 12%, transparent) 44%,
     transparent 70%);
   pointer-events: none;
 }
@@ -378,7 +399,8 @@
 .std-crossing {
   margin-top: .5rem;
   font-size: clamp(1.35rem, 3vw, 1.8rem);
-  color: var(--rose);
+  color: var(--burgundy);
+  opacity: .85;
 }
 
 .std-numerals {
@@ -449,7 +471,7 @@
   text-shadow: 0 1px 0 color-mix(in srgb, white 55%, transparent);
 }
 
-/* ══ Ⅳ · THE DETAILS — the particulars ════════════════════════ */
+/* ══ Ⅳ · THE DETAILS — the order of celebrations ══════════════ */
 
 .scene--details { overflow: clip; }
 
@@ -472,13 +494,14 @@
 }
 
 .details-intro {
-  margin-top: 1rem;
+  margin-top: 1.1rem;
   font-family: var(--font-display);
   font-style: italic;
   font-size: var(--fs-lead);
-  color: var(--night-ink);
+  color: var(--moonlit-soft);
 }
 
+/* the jali niches — each celebration set in its own mehrab */
 .programme {
   position: relative;
   display: grid;
@@ -488,13 +511,13 @@
 
 .programme-item {
   position: relative;
-  padding: clamp(1.8rem, 4vw, 2.8rem) clamp(1.4rem, 3vw, 2.2rem);
+  padding: clamp(2rem, 4vw, 2.9rem) clamp(1.4rem, 3vw, 2.2rem) clamp(1.8rem, 4vw, 2.8rem);
   text-align: center;
   background: linear-gradient(174deg,
     color-mix(in srgb, var(--paper-raised) 84%, white 16%) 0%,
     color-mix(in srgb, var(--ivory) 88%, var(--candle) 12%) 100%);
   border: 1px solid color-mix(in srgb, var(--champagne) 28%, transparent);
-  border-radius: 8px;
+  border-radius: 120px 120px 8px 8px;
   box-shadow: var(--shadow-card);
   transition: transform var(--t-med) var(--ease-soft),
               box-shadow var(--t-med) var(--ease-soft);
@@ -505,13 +528,13 @@
   box-shadow: var(--shadow-lift);
 }
 
-/* a dewdrop of light above each card */
+/* a strand of zari above each niche */
 .programme-item::before {
   content: "";
   position: absolute;
   top: 0;
   left: 50%;
-  width: 44px;
+  width: 52px;
   height: 3px;
   transform: translateX(-50%);
   border-radius: 0 0 4px 4px;
@@ -534,6 +557,7 @@
   fill: none;
   stroke: currentColor;
   stroke-width: 1.7;
+  --fx-fill: .22;
 }
 
 .programme-item h3 {
@@ -560,8 +584,8 @@
 
 .details-orn {
   display: block;
-  width: clamp(220px, 26vw, 300px);
-  margin: clamp(2.6rem, 6vh, 4rem) auto;
+  width: clamp(220px, 30vw, 300px);
+  margin: clamp(2.4rem, 5.4vh, 3.6rem) auto;
   color: var(--champagne-soft);
   fill: none;
   stroke: currentColor;
@@ -616,6 +640,8 @@
 }
 
 /* ══ Ⅴ · THE COLOURS OF THE DAY ════════════════════════════════ */
+
+.scene--palette { overflow: clip; }
 
 .scene--palette .kicker { margin-bottom: 1rem; }
 
@@ -700,19 +726,19 @@
   display: block;
   margin-top: .5rem;
   font-family: var(--font-editorial);
-  font-size: var(--fs-h3);
+  font-size: clamp(1.5rem, 3.6vw, 2rem);
   color: var(--moonlit);
 }
 
 .dresscode-note {
   display: block;
-  margin-top: .7rem;
+  margin-top: .8rem;
   font-size: var(--fs-small);
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--night-faint);
 }
 
-/* ══ Ⅵ · THE WEDDING DAY — a garland of moments ═══════════════ */
+/* ══ Ⅵ · THE CELEBRATIONS — a garland of moments ══════════════ */
 
 .scene--itinerary { overflow: clip; }
 
@@ -764,14 +790,14 @@
   text-align: center;
 }
 
-/* the hanging stem and the light it carries */
+/* the hanging stem and the marigold it carries */
 .day-word__bulb {
   position: relative;
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   background: radial-gradient(circle at 36% 30%,
-    #fffbe8 0%, var(--candle) 44%, var(--champagne) 100%);
+    #FFF0C4 0%, #F0A93C 46%, #C97A22 100%);
   box-shadow:
     0 0 10px 3px color-mix(in srgb, var(--candle) 55%, transparent),
     0 0 26px 8px color-mix(in srgb, var(--candle) 24%, transparent),
@@ -804,7 +830,7 @@
   color: var(--moonlit);
 }
 
-/* ══ Ⅶ · THE GLADE PAVILION — venue & location ════════════════ */
+/* ══ Ⅶ · THE PALACE COURT — venue & location ══════════════════ */
 
 .scene--venue { overflow: clip; }
 
@@ -855,6 +881,14 @@
   text-align: center;
 }
 
+.venue-diya {
+  display: block;
+  width: clamp(96px, 12vw, 132px);
+  margin: clamp(1.4rem, 3vh, 2.2rem) auto 0;
+  opacity: .95;
+  filter: drop-shadow(0 6px 16px color-mix(in srgb, var(--wine) 16%, transparent));
+}
+
 .venue-sublines {
   display: flex;
   flex-wrap: wrap;
@@ -901,7 +935,7 @@
   margin-top: clamp(1.4rem, 3.4vh, 2.2rem);
 }
 
-/* ══ Ⅷ · THE COUNTDOWN — beneath the blossom wreath ═══════════ */
+/* ══ Ⅷ · THE COUNTDOWN — beneath the rangoli mandala ══════════ */
 
 .scene--countdown { overflow: clip; }
 
@@ -912,7 +946,7 @@
   pointer-events: none;
   background:
     radial-gradient(58% 46% at 50% 44%,
-      color-mix(in srgb, var(--candle) 22%, transparent) 0%, transparent 70%),
+      color-mix(in srgb, var(--candle) 40%, transparent) 0%, transparent 70%),
     radial-gradient(44% 36% at 12% 88%,
       color-mix(in srgb, var(--rose) 14%, transparent) 0%, transparent 70%);
 }
@@ -923,11 +957,7 @@
   left: 50%;
   width: clamp(300px, 46vw, 560px);
   transform: translate(-50%, -50%);
-  color: var(--champagne-soft);
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.4;
-  opacity: .38;
+  opacity: .22;
   pointer-events: none;
 }
 
@@ -949,7 +979,7 @@
 .count-script em {
   font-family: var(--font-script);
   font-style: normal;
-  color: var(--rose);
+  color: var(--burgundy);
   font-size: 1.02em;
   white-space: nowrap;
 }
@@ -997,7 +1027,7 @@
 .count-date {
   margin-top: clamp(1.4rem, 3vh, 2rem);
   text-align: center;
-  color: var(--night-faint);
+  color: var(--night-ink);
   letter-spacing: .18em;
 }
 
@@ -1034,7 +1064,7 @@
   filter: drop-shadow(0 8px 22px color-mix(in srgb, var(--wine) 14%, transparent));
 }
 
-/* a last wish-trail drifting behind the garland */
+/* a last petal drift behind the garland */
 .closing-dust {
   position: absolute;
   top: clamp(.4rem, 1.6vh, 1.6rem);
@@ -1046,7 +1076,7 @@
   stroke: currentColor;
   opacity: .42;
   pointer-events: none;
-  animation: dust-float 10s ease-in-out infinite;
+  animation: hero-dust-float 10s ease-in-out infinite;
 }
 
 .closing-script {
@@ -1098,7 +1128,7 @@
   margin-top: clamp(1.8rem, 4vh, 2.6rem);
 }
 
-/* ══ the footer — the last line of the storybook ═══════════════ */
+/* ══ the footer — the last line of the invitation ══════════════ */
 
 .footer {
   position: relative;
@@ -1138,7 +1168,7 @@
 .leaf-corner {
   position: absolute;
   width: clamp(56px, 8vw, 84px);
-  opacity: .58;
+  opacity: .5;
   pointer-events: none;
 }
 

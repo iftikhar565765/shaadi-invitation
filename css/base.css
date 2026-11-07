@@ -1,9 +1,9 @@
 /* ═══════════════════════════════════════════════════════════════
-   AURELIA · base.css
-   The storybook beneath every scene: the morning-sky gradient,
-   the barely-there scatter of wishes, the understory glade, the
-   bower frame, the drifting dust motes and wish-sparkles. Plus
-   the typographic voices, buttons, navigation and the reveal
+   SHAADI · base.css
+   The court beneath every scene: the sandalwood-sky gradient,
+   the barely-there paisley scatter, the garland understory, the
+   dwar frame, the drifting marigold petals and diya sparkles.
+   Plus the typographic voices, buttons, navigation and the reveal
    grammar shared by every section.
    ═══════════════════════════════════════════════════════════════ */
 
@@ -62,12 +62,12 @@ a { color: inherit; }
   border-radius: 2px;
 }
 
-/* ── the morning sky ─────────────────────────────────────────────
+/* ── the sandalwood sky ──────────────────────────────────────────
    Painted once, fixed, in four soft layers:
-   1. a warm wish-light glowing where the sun clears the trees
-   2. dawn blush pooling at the horizon line
-   3. wisteria mist breathing at the edges
-   4. the pearl ivory sky carrying it all                        */
+   1. warm diya-light glowing where the sun rises over the court
+   2. marigold blush pooling at the horizon line
+   3. rani-pink mist breathing at the edges
+   4. the sandalwood ivory sky carrying it all                    */
 
 body {
   background-image:
@@ -76,10 +76,10 @@ body {
       color-mix(in srgb, var(--candle) 22%, transparent) 34%,
       transparent 62%),
     radial-gradient(150% 120% at 50% 118%,
-      color-mix(in srgb, var(--rose) 24%, transparent) 0%,
+      color-mix(in srgb, var(--crimson) 24%, transparent) 0%,
       transparent 52%),
     radial-gradient(130% 100% at -10% 42%,
-      color-mix(in srgb, var(--crimson) 14%, transparent) 0%,
+      color-mix(in srgb, var(--rose) 14%, transparent) 0%,
       transparent 55%),
     radial-gradient(130% 100% at 110% 46%,
       color-mix(in srgb, var(--sage) 16%, transparent) 0%,
@@ -108,12 +108,12 @@ body::before {
   background:
     url('../assets/orn/understory-left.svg') left top / clamp(240px, 34vw, 480px) no-repeat,
     url('../assets/orn/understory-right.svg') right top / clamp(220px, 30vw, 430px) no-repeat;
-  opacity: .4;    /* a breath of the glade — never competing with the page */
+  opacity: .4;    /* a breath of the garland — never competing with the page */
 }
 
-/* ── the drift — petals on the air ──────────────────────────
-   Twelve rose petals wandering through the light. Three flight
-   paths, staggered phases — each one sways on its own rhythm. */
+/* ── the drift — marigold petals on the air ────────────────────
+   Twelve petals and buds wandering through the light. Three
+   flight paths, staggered phases — each sways on its own rhythm. */
 
 .fireflies {
   position: fixed;
@@ -131,9 +131,9 @@ body::before {
   margin: calc(var(--s, 3px) / -2);
   border-radius: 72% 28% 62% 38% / 58% 64% 36% 42%;
   background: linear-gradient(135deg,
-    color-mix(in srgb, var(--rose) 88%, white) 0%,
-    var(--rose) 44%,
-    color-mix(in srgb, var(--crimson) 62%, transparent) 100%);
+    color-mix(in srgb, var(--crimson) 82%, white) 0%,
+    var(--crimson) 44%,
+    color-mix(in srgb, var(--champagne) 66%, transparent) 100%);
   box-shadow: 0 1px 3px color-mix(in srgb, var(--wine) 10%, transparent);
   opacity: var(--o, .4);
   animation:
@@ -184,7 +184,7 @@ body::before {
   74%      { opacity: calc(var(--o, .4) * .34); }
 }
 
-/* ── the bower frame — a hairline at the edge of the storybook ── */
+/* ── the dwar frame — a hairline at the edge of the court ──────── */
 
 .court-frame {
   position: fixed;
@@ -617,7 +617,7 @@ html.no-js body { overflow: auto; height: auto; }
   overflow: hidden;
 }
 
-/* fairyland symbol strokes — the library draws in currentColor */
+/* court symbol strokes — the library draws in currentColor */
 .svg-definitions .f {
   fill: currentColor;
   fill-opacity: var(--fx-fill, .13);

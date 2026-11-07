@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   AMORIS · config.js
+   SHAADI · config.js
    ---------------------------------------------------------------
    Main personalisation data for the site and visual editor.
    Longer copy, palette, and theme are editable here. Values
@@ -8,14 +8,14 @@
    ═══════════════════════════════════════════════════════════════ */
 
 window.HEIRLOOM = {
-  templateId: "amoris",
+  templateId: "shaadi",
 
   /* ── The couple — SAMPLE content, replace with your names ────── */
   couple: {
-    partnerOne: "Elowen",                    // SAMPLE
-    partnerTwo: "Finnian",                   // SAMPLE
-    initials:  "E · F",                      // SAMPLE — used on seals & monograms
-    namesLine: "Elowen & Finnian"            // SAMPLE — used across the site
+    partnerOne: "Meera",                     // SAMPLE
+    partnerTwo: "Aarav",                     // SAMPLE
+    initials:  "M · A",                      // SAMPLE — used on seals & monograms
+    namesLine: "Meera & Aarav"               // SAMPLE — used across the site
   },
 
   /* ── The wedding date & time ─────────────────────────────────
@@ -23,22 +23,22 @@ window.HEIRLOOM = {
            countdown and the calendar files are correct on every
            guest's device, wherever they are in the world.
            Format: "YYYY-MM-DDTHH:MM:SS±HH:MM"
-           The sample below = 19 June 2027, 4:30 PM, GMT-4 (EDT).
+           The sample below = 20 November 2027, 8:30 PM, IST.
      display / words / numerals : how the date reads in the copy. */
   wedding: {
-    iso: "2027-06-19T16:30:00-04:00",                                        // EDIT
-    endIso: "2027-06-19T23:00:00-04:00",                                     // EDIT — end of the celebration
-    display: "Saturday, 19 June 2027 · half past four in the afternoon",      // EDIT
-    zoneLabel: "",                                                           // EDIT — optional note for guests abroad, e.g. "EDT"
-    words: "Saturday · The Nineteenth of June · Two Thousand Twenty-Seven",  // EDIT
-    numerals: "19 · 06 · 2027",                                              // EDIT
-    eventTitle: "Elowen & Finnian — Wedding"                                 // EDIT (calendar entry)
+    iso: "2027-11-20T20:30:00+05:30",                                        // EDIT
+    endIso: "2027-11-21T01:00:00+05:30",                                     // EDIT — end of the celebration
+    display: "Saturday, 20 November 2027 · half past eight in the evening",   // EDIT
+    zoneLabel: "IST",                                                        // EDIT — optional note for guests abroad
+    words: "Saturday · The Twentieth of November · Two Thousand Twenty-Seven", // EDIT
+    numerals: "20 · 11 · 2027",                                              // EDIT
+    eventTitle: "Meera & Aarav — Wedding"                                    // EDIT (calendar entry)
   },
 
   /* ── The venue ──────────────────────────────────────────────── */
   venue: {
-    name: "The Rose Garden at Evermore Manor",          // SAMPLE
-    address: "Evermore Manor, Hudson Valley, New York", // SAMPLE
+    name: "The Peacock Court at Rajwada Palace",     // SAMPLE
+    address: "Rajwada Palace, Amber Road, Jaipur, Rajasthan", // SAMPLE
     mapsQuery: "",                               // optional Maps search override
     /* A full URL here overrides the map link built above, e.g. an
        exact Google Maps place link or an Apple Maps URL.          */
@@ -48,20 +48,20 @@ window.HEIRLOOM = {
   /* ── Copy shown throughout the invitation ────────────────────
      The visual editor can change these values without editing HTML. */
   content: {
-    pageTitle: "Elowen & Finnian · 19 June 2027 — Wedding Invitation",
-    pageDescription: "Elowen and Finnian request the pleasure of your company in the rose gardens of Evermore Manor — ribbons, roses and one perfect afternoon, on Saturday the nineteenth of June 2027. Open your invitation.",
-    socialTitle: "Elowen & Finnian — An Invitation · 19.06.2027",
-    socialDescription: "Roses, ribbons and a happily ever after — you are cordially invited.",
+    pageTitle: "Meera & Aarav · 20 November 2027 — Indian Wedding Invitation",
+    pageDescription: "Meera and Aarav request the honour of your presence at the Peacock Court at Rajwada Palace, Jaipur — three days of haldi, mehndi, music and sacred vows beneath the marigolds, on Saturday the twentieth of November 2027. Open your invitation.",
+    socialTitle: "Meera & Aarav — An Invitation · 20.11.2027",
+    socialDescription: "Marigolds, mehndi and a happily ever after — you are cordially invited.",
     navStory: "Story",
-    navDetails: "Details",
+    navDetails: "Events",
     navVenue: "Venue",
     navRsvp: "RSVP",
     menuInvitation: "The Invitation",
     menuStory: "Our Story",
     menuSaveDate: "Save the Date",
-    menuDetails: "The Details",
+    menuDetails: "The Celebrations",
     menuPalette: "The Palette",
-    menuWeddingDay: "The Wedding Day",
+    menuWeddingDay: "The Festivities",
     menuVenue: "Venue & Location",
     menuRsvp: "Kindly Respond",
     menuCountdown: "The Countdown",
@@ -72,69 +72,78 @@ window.HEIRLOOM = {
     skipButton: "Skip straight to the invitation",
     envelopeAddress: "their honoured guests",
     invitationEyebrow: "Together with their families",
-    invitationLead: "request the honour of your presence at the celebration of their marriage — an afternoon of roses, ribbons and dancing until the stars come out.",
-    invitationVenueSuffix: "· Hudson Valley",
+    invitationLead: "request the honour of your presence at the celebration of their marriage — three days of haldi, mehndi, music and sacred vows beneath the marigolds.",
+    invitationVenueSuffix: "· Jaipur",
     storyKicker: "№ 02 · Their Story",
-    storyTitle: "Once upon",
-    storyTitleScript: "a time",
-    storyParagraphOne: "Every love story deserves a beautiful beginning, and ours began quietly — a garden full of roses, one shared swing, and a first conversation that outlasted the rain.",
-    storyParagraphTwo: "Six years, two cities and a thousand small kindnesses later, we are writing our next chapter in the oldest language we know — love. Nothing would mean more than to have you beside us when we do.",
-    storyQuote: "Whatever our souls are made of, his and mine are the same.",
-    storyQuoteLabel: "— Emily Brontë, read aloud beneath the roses on our first walk home",
+    storyTitle: "A tale written",
+    storyTitleScript: "in the stars",
+    storyParagraphOne: "Every great love story deserves a grand beginning, and ours began at a friend's sangeet — a shared plate of jalebis, one borrowed shawl, and a conversation that outlasted the whole playlist.",
+    storyParagraphTwo: "Six years, two cities and a thousand cups of chai later, we are writing our next chapter in the oldest language we know — love. Nothing would mean more than to have you beside us when we do.",
+    storyQuote: "Where there is love, there is life.",
+    storyQuoteLabel: "— Mahatma Gandhi, a line we return to again and again",
     storyNote: "chapter the first, and all the rest",
-    storyNoteCredit: "— scribbled in the margin of a storybook, on our first trip",
-    storyCaptionOne: "the beginning",
-    storyCaptionTwo: "always, us",
-    storyCaptionFour: "the long path",
+    storyNoteCredit: "— scribbled on a train ticket from Jaipur to Udaipur",
+    storyCaptionOne: "the first namaste",
+    storyCaptionTwo: "the sangeet spark",
+    storyCaptionFour: "the seven steps",
     storyAside: "and they lived",
     saveDateTitle: "Save the Date",
-    saveDateCrossing: "an afternoon of roses & first dances",
+    saveDateCrossing: "three days of colour, song & sacred vows",
     saveDateNote: "Add the date to your calendar and keep these particulars close.",
     calendarDownloadLabel: "Add to Calendar",
     calendarGoogleLabel: "Google Calendar",
-    detailsKicker: "№ 04 · The Particulars",
+    detailsKicker: "№ 04 · The Celebrations",
     detailsTitleFirst: "Wedding",
-    detailsTitleSecond: "Details",
-    detailsIntro: "The day, at a glance.",
-    ceremonyLabel: "The Ceremony",
-    ceremonyTime: "Half past four",
-    ceremonyNote: "Vows in the rose garden as the string quartet plays.",
-    receptionLabel: "The Reception",
-    receptionTime: "Eight o'clock",
-    receptionNote: "Dinner and dancing in the orangery, until the last candle gutters.",
+    detailsTitleSecond: "Events",
+    detailsIntro: "Three days of festivity, at a glance.",
+    haldiLabel: "The Haldi",
+    haldiTime: "Saturday, eleven in the morning",
+    haldiNote: "A golden bath of turmeric, songs and blessings in the garden courtyard.",
+    mehndiLabel: "The Mehndi",
+    mehndiTime: "Friday, four in the afternoon",
+    mehndiNote: "Henna, dholak songs and dance as the bride's hands are adorned.",
+    ceremonyLabel: "The Sangeet Night",
+    ceremonyTime: "Friday, half past seven",
+    ceremonyNote: "An evening of music and family performances — bring your dancing shoes.",
+    receptionLabel: "The Pheras & Varmala",
+    receptionTime: "Saturday, half past eight",
+    receptionNote: "Seven vows around the sacred fire within the mandap, as the shehnai plays.",
+    feastLabel: "The Reception",
+    feastTime: "Sunday, seven in the evening",
+    feastNote: "A grand feast, the first dance and celebrations in the durbar hall.",
     kindlyReplyLabel: "Kindly Reply",
     kindlyReplyNote: "Kindly send your response using the reply card further below.",
     particularsEyebrow: "The Particulars",
     particularsDateLabel: "The Date",
     particularsPlaceLabel: "The Place",
     particularsAttireLabel: "The Attire",
-    particularsAttire: "Garden formal",
-    particularsAttireNote: "Afternoon dress with a flourish of rose gold and blush is most welcome.",
+    particularsAttire: "Indian festive",
+    particularsAttireNote: "Lehengas, sherwanis and jewel tones are most welcome — bright and joyous.",
     particularsCarriagesLabel: "The Carriages",
-    particularsCarriagesTime: "At one o'clock",
-    particularsCarriagesNote: "The last candle dims as the nightingales begin.",
+    particularsCarriagesTime: "At midnight",
+    particularsCarriagesNote: "The last diya dims as the dhol falls quiet.",
     paletteKicker: "№ 05 · The Colours of the Day",
     paletteTitleFirst: "The wedding",
     paletteTitleSecond: "palette",
-    paletteIntro: "Blush petal and dusty rose, ivory silk and rose gold, a whisper of sage — the colours of the celebration.",
-    dressCodeLabel: "Attire · Evening Dress",
-    dressCodeTitle: "Garden formal",
-    dressCodeNote: "Blush, ivory and a flourish of rose gold are most welcome — dress as splendidly as you feel.",
-    weddingDayKicker: "№ 06 · The Celebration",
-    weddingDayTitleFirst: "The Wedding",
-    weddingDayTitleSecond: "Day",
+    paletteIntro: "Marigold gold and sindoor red, rani pink and peacock emerald, zari shimmer on sandalwood ivory — the colours of the celebration.",
+    dressCodeLabel: "Attire · Indian Festive",
+    dressCodeTitle: "Bright & joyous",
+    dressCodeNote: "Lehengas, sherwanis, sarees and jewel tones are most welcome — dress as splendidly as you feel.",
+    weddingDayKicker: "№ 06 · The Celebrations",
+    weddingDayTitleFirst: "The wedding",
+    weddingDayTitleSecond: "festivities",
     venueKicker: "№ 07 · The Place",
-    venueDescription: "A rose-crowned garden estate beyond the city — swings beneath the old oaks, ribbon-lined paths through the roses, and a candlelit orangery glowing with wishes for one unforgettable afternoon.",
+    venueDescription: "A palace court carved in marble and gold — marigold torans over the jharokhas, a mandap dressed in jasmine and roses, and courtyards glowing with the light of a thousand diyas.",
     venueCeremonyLabel: "Ceremony",
-    venueCeremonyText: "in the rose garden, as the quartet plays",
+    venueCeremonyText: "in the mandap, as the shehnai plays",
     venueReceptionLabel: "Reception",
-    venueReceptionText: "dinner & dancing in the orangery",
+    venueReceptionText: "dinner & dancing in the durbar courtyard",
     mapButton: "View Location",
     rsvpKicker: "№ 08 · Your Reply",
     rsvpTitle: "Kindly Respond",
     rsvpLead: "Kindly reply by",
     rsvpNameLabel: "Your name",
-    rsvpNamePlaceholder: "e.g. Eleanor Whitmore",
+    rsvpNamePlaceholder: "e.g. Kavya Sharma",
     rsvpNameError: "May we have your name? Two letters or more will do.",
     rsvpAttendanceLabel: "Will you be joining us?",
     rsvpAcceptLabel: "Joyfully accepts",
@@ -145,9 +154,9 @@ window.HEIRLOOM = {
     rsvpGuestSingular: "guest",
     rsvpGuestPlural: "guests",
     rsvpDietaryLabel: "Dietary requirements",
-    rsvpDietaryPlaceholder: "Allergies, intolerances, or dishes to avoid",
+    rsvpDietaryPlaceholder: "Vegetarian, Jain, vegan, allergies…",
     rsvpMessageLabel: "A note for the couple",
-    rsvpMessagePlaceholder: "Song requests, memories, well wishes…",
+    rsvpMessagePlaceholder: "Song requests, memories, blessings…",
     rsvpSubmitLabel: "Send Response",
     rsvpAmendLabel: "Amend the reply",
     countdownDaysLabel: "Days",
@@ -156,32 +165,33 @@ window.HEIRLOOM = {
     countdownSecondsLabel: "Seconds",
     countdownKicker: "№ 09 · The Grand Countdown",
     countdownTitle: "counting the hours until",
-    countdownPromise: "“I do”",
+    countdownPromise: "the first phera",
     closingScript: "with all our love",
-    closingMessage: "Thank you, from the depths of our hearts, for being part of our story. We cannot wait to celebrate with you beneath the roses and the evening stars — an afternoon straight out of a love story.",
-    footerTagline: "A rose, a vow, a happily ever after."
+    closingMessage: "Thank you, from the depths of our hearts, for being part of our story. We cannot wait to celebrate with you beneath the marigolds and the desert stars — three days straight out of a love story.",
+    footerTagline: "A garland, a vow, a happily ever after."
   },
 
   palette: [
-    { name: "Blush Petal",   color: "#E8B9C4" },
-    { name: "Dusty Rose",    color: "#CDA3B0" },
-    { name: "Rose Gold",     color: "#C18A70" },
-    { name: "Sage Leaf",     color: "#B0BAA6" },
-    { name: "Ivory Silk",    color: "#FFFCFA" }
+    { name: "Marigold Gold",  color: "#E3A23C" },
+    { name: "Sindoor Red",    color: "#9C2B35" },
+    { name: "Rani Pink",      color: "#C4406E" },
+    { name: "Peacock Emerald",color: "#2F6B52" },
+    { name: "Zari Gold",      color: "#C9922E" },
+    { name: "Sandalwood Ivory", color: "#FBF3E4" }
   ],
-  theme: "twilight",
+  theme: "marigold",
   themeColors: {},
   fonts: {
-    editorial: "prata",
+    editorial: "rozhaOne",
     display: "cormorant",
     script: "greatVibes",
     hand: "shadowsIntoLight",
     body: "jost"
   },
 
-  /* ── Wedding-day moments — SAMPLE words for the wedding programme.
-     Use one short word per entry; an empty list hides the section. */
-  moments: ["Gathering", "The Vows", "The Feast", "Toasts", "The First Dance", "Roses & Ribbons", "Carriages"],
+  /* ── Wedding festivities — SAMPLE words for the programme.
+     Use one short phrase per entry; an empty list hides the section. */
+  moments: ["The Haldi", "The Mehndi", "The Sangeet", "The Baraat", "The Varmala", "The Pheras", "The Feast", "The Bidaai"],
 
   /* ── RSVP ─────────────────────────────────────────────────────
      endpoint : leave "" for the honest demonstration mode — the
@@ -194,12 +204,12 @@ window.HEIRLOOM = {
   rsvp: {
     endpoint: "",
     maxGuests: 2,
-    deadline: "the first of May, 2027"             // SAMPLE
+    deadline: "the first of October, 2027"         // SAMPLE
   },
 
   /* ── Countdown wording (invalid or passed dates) ─────────────── */
   countdown: {
-    invalidMessage: "The exact hour is still being written between the pages — see the details below.",
+    invalidMessage: "The muhurat is still being finalised — see the celebrations below.",
     pastMessage: "The celebration has begun — thank you for being part of our story."
   },
 

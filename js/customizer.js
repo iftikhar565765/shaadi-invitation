@@ -60,6 +60,8 @@
   var selectedColorKey = '';
   var selectedColorRemovable = false;
   var elementLabels = {
+    'gate-toran': 'The marigold toran',
+    'gate-pediment': 'The mehrab arch',
     'opening-watermark': 'Opening watermark',
     'opening-eyebrow': 'Opening introduction',
     'opening-names': 'Opening names',
@@ -518,7 +520,7 @@
   }
 
   function prepareConfigForPublish() {
-    config.templateId = config.templateId || 'amoris';
+    config.templateId = config.templateId || 'shaadi';
     sendPreview();
     return Promise.resolve(clone(config));
   }
@@ -1121,9 +1123,18 @@
       addTextField(inner, { path: 'content.ceremonyLabel', label: 'Ceremony heading' });
       addTextField(inner, { path: 'content.ceremonyTime', label: 'Ceremony time' });
       addTextField(inner, { path: 'content.ceremonyNote', label: 'Ceremony note' });
-      addTextField(inner, { path: 'content.receptionLabel', label: 'Reception heading' });
-      addTextField(inner, { path: 'content.receptionTime', label: 'Reception time' });
-      addTextField(inner, { path: 'content.receptionNote', label: 'Reception note' });
+      addTextField(inner, { path: 'content.receptionLabel', label: 'Pheras heading' });
+      addTextField(inner, { path: 'content.receptionTime', label: 'Pheras time' });
+      addTextField(inner, { path: 'content.receptionNote', label: 'Pheras note' });
+      addTextField(inner, { path: 'content.haldiLabel', label: 'Haldi heading' });
+      addTextField(inner, { path: 'content.haldiTime', label: 'Haldi time' });
+      addTextField(inner, { path: 'content.haldiNote', label: 'Haldi note' });
+      addTextField(inner, { path: 'content.mehndiLabel', label: 'Mehndi heading' });
+      addTextField(inner, { path: 'content.mehndiTime', label: 'Mehndi time' });
+      addTextField(inner, { path: 'content.mehndiNote', label: 'Mehndi note' });
+      addTextField(inner, { path: 'content.feastLabel', label: 'Reception feast heading' });
+      addTextField(inner, { path: 'content.feastTime', label: 'Reception feast time' });
+      addTextField(inner, { path: 'content.feastNote', label: 'Reception feast note' });
       addTextField(inner, { path: 'content.kindlyReplyLabel', label: 'Kindly reply heading' });
       addTextField(inner, { path: 'content.kindlyReplyNote', label: 'Kindly reply note' });
       addTextField(inner, { path: 'content.venueDescription', label: 'Venue description', multiline: true, rows: 2 });
@@ -1149,19 +1160,19 @@
   /* ── design step: curated moods & voices ───────────────────── */
 
   var THEME_META = [
-    { key: 'twilight', name: 'Petals & Dawn', chips: ['#B9885B', '#FFFDF8', '#C89355', '#4A3A67'] },
-    { key: 'blossom', name: 'Wisteria & Pearl', chips: ['#B57E93', '#FFFCFE', '#C89355', '#4E3667'] },
-    { key: 'gilded', name: 'Gilded Ever After', chips: ['#BC8A4F', '#FFFCF2', '#C08C3E', '#55405C'] },
-    { key: 'moonlit', name: 'Powder Sky', chips: ['#8FA3B8', '#FBFDFE', '#C9A96A', '#33475C'] }
+    { key: 'marigold', name: 'Marigold & Ivory', chips: ['#C9922E', '#FDF7EC', '#A63A46', '#2F6B52'] },
+    { key: 'rani', name: 'Rani Pink', chips: ['#C13D68', '#FDF2EF', '#C9922E', '#5E1B3A'] },
+    { key: 'peacock', name: 'Peacock Emerald', chips: ['#2F6B52', '#F3F8F3', '#C9922E', '#1D3D30'] },
+    { key: 'sindoor', name: 'Sindoor Royal', chips: ['#8C2332', '#FBF2E9', '#C08A2A', '#4A1420'] }
   ];
 
   var TYPE_PAIRINGS = [
-    { name: 'Happily Ever After', fonts: { editorial: 'prata', display: 'cormorant', script: 'greatVibes', hand: 'shadowsIntoLight', body: 'jost' } },
-    { name: 'Enchanted Ink', fonts: { editorial: 'bodoni', display: 'playfair', script: 'greatVibes', hand: 'caveat', body: 'dmSans' } },
-    { name: 'Moonlit Garden', fonts: { editorial: 'prata', display: 'ebGaramond', script: 'parisienne', hand: 'shadowsIntoLight', body: 'montserrat' } },
-    { name: 'Storybook Notes', fonts: { editorial: 'libreCaslon', display: 'crimsonPro', script: 'homemadeApple', hand: 'nothingYouCouldDo', body: 'karla' } },
-    { name: 'Wildflower Verse', fonts: { editorial: 'dmSerif', display: 'lora', script: 'tangerine', hand: 'shadowsIntoLight', body: 'outfit' } },
-    { name: 'Gilded Wings', fonts: { editorial: 'marcellus', display: 'cormorant', script: 'pinyon', hand: 'laBelle', body: 'jost' } }
+    { name: 'Royal Durbar', fonts: { editorial: 'rozhaOne', display: 'cormorant', script: 'greatVibes', hand: 'shadowsIntoLight', body: 'jost' } },
+    { name: 'Palace Ink', fonts: { editorial: 'bodoni', display: 'playfair', script: 'greatVibes', hand: 'caveat', body: 'dmSans' } },
+    { name: 'Moonlit Mehfil', fonts: { editorial: 'prata', display: 'ebGaramond', script: 'parisienne', hand: 'shadowsIntoLight', body: 'montserrat' } },
+    { name: 'Mehndi Notes', fonts: { editorial: 'libreCaslon', display: 'crimsonPro', script: 'homemadeApple', hand: 'nothingYouCouldDo', body: 'karla' } },
+    { name: 'Heirloom Verse', fonts: { editorial: 'dmSerif', display: 'lora', script: 'tangerine', hand: 'shadowsIntoLight', body: 'outfit' } },
+    { name: 'Gilded Jharokha', fonts: { editorial: 'marcellus', display: 'cormorant', script: 'pinyon', hand: 'laBelle', body: 'jost' } }
   ];
 
   function fontPreviewFamily(font) {
@@ -1173,6 +1184,7 @@
       prata: '"Prata", serif',
       marcellus: '"Marcellus", serif',
       italiana: '"Italiana", serif',
+      rozhaOne: '"Rozha One", serif',
       libreCaslon: '"Libre Caslon Text", serif',
       libreBaskerville: '"Libre Baskerville", serif',
       ebGaramond: '"EB Garamond", serif',
@@ -1286,7 +1298,7 @@
       var roles = [
         {
           key: 'editorial', label: 'Editorial headings',
-          choices: ['bodoni', 'playfair', 'dmSerif', 'italiana', 'prata', 'libreBaskerville', 'crimsonPro', 'cormorant']
+          choices: ['rozhaOne', 'bodoni', 'playfair', 'dmSerif', 'italiana', 'prata', 'marcellus', 'libreBaskerville', 'crimsonPro', 'cormorant']
         },
         {
           key: 'display', label: 'Romantic serif',
@@ -1332,10 +1344,11 @@
 
       groupLabel(inner, 'The website colours');
       var themeColorDefaults = {
-        gilt:      { primary: '#8C6B2F', darkBackground: '#2E0A15', paper: '#F7F1E1', accent: '#D6B87E', botanical: '#7A8464', rose: '#C9A9A0' },
-        royal:     { primary: '#7C1F3E', darkBackground: '#2B0A18', paper: '#F7F1E4', accent: '#C9AE7E', botanical: '#77804F', rose: '#C89C9C' },
-        verdant:   { primary: '#4F8A63', darkBackground: '#12271B', paper: '#F7F4E9', accent: '#C6B183', botanical: '#777957', rose: '#C5A0A0' },
-        porcelain: { primary: '#4E6E8E', darkBackground: '#16202C', paper: '#F8F5EC', accent: '#C9B58C', botanical: '#77808A', rose: '#B8A5A7' }
+        marigold: { primary: '#A63A46', darkBackground: '#5C1F2C', paper: '#FDF7EC', accent: '#C9922E', botanical: '#6E7C52', rose: '#E8A0B4' },
+        rani:     { primary: '#C13D68', darkBackground: '#5E1B3A', paper: '#FDF2EF', accent: '#C9922E', botanical: '#87866E', rose: '#EFB0C0' },
+        peacock:  { primary: '#2F6B52', darkBackground: '#1D3D30', paper: '#F3F8F3', accent: '#C9922E', botanical: '#6E7C52', rose: '#C9ABBA' },
+        sindoor:  { primary: '#8C2332', darkBackground: '#4A1420', paper: '#FBF2E9', accent: '#C08A2A', botanical: '#8A8062', rose: '#E4AFA6' },
+        gilt:     { primary: '#A63A46', darkBackground: '#5C1F2C', paper: '#FDF7EC', accent: '#C9922E', botanical: '#6E7C52', rose: '#E8A0B4' }
       };
       var activeThemeColors = themeColorDefaults[config.theme] || themeColorDefaults.gilt;
       var palette = el('div', 'palette-editor');
