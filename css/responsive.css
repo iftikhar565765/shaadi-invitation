@@ -1,0 +1,190 @@
+/* ═══════════════════════════════════════════════════════════════
+   AURELIA · responsive.css
+   The fairyland breathes at every size — wide desk, small phone.
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1080px) {
+  .story-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, .82fr);
+    gap: 2.4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav__links { display: none; }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .story-aside { padding-top: 0; }
+  .story-rose { margin-inline: auto; }
+
+  .particulars-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .programme {
+    grid-template-columns: 1fr;
+    max-width: 26rem;
+    margin-inline: auto;
+  }
+
+  .understory {
+    background:
+      url('../assets/orn/understory-left.svg') left bottom / clamp(200px, 40vw, 320px) no-repeat;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --pad-section: clamp(3.6rem, 11vh, 6rem);
+  }
+
+  .opening__corner {
+    width: clamp(96px, 24vw, 150px);
+    opacity: .4;
+  }
+
+  .opening__dust {
+    top: -2.4rem;
+    width: 120vw;
+    opacity: .75;
+  }
+
+  .hero-dust {
+    top: -1.8rem;
+    width: 130vw;
+    opacity: .7;
+  }
+
+  .hero-frond {
+    width: clamp(64px, 14vw, 96px);
+    opacity: .3;
+  }
+
+  .hero-crest { width: clamp(132px, 34vw, 176px); }
+
+  .hero-scroll__line { height: 40px; }
+
+  .count-clock {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .6rem;
+  }
+
+  .count-unit { min-width: 0; }
+
+  .count-num { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+
+  .countdown-wreath {
+    width: clamp(140px, 34vw, 196px);
+    top: calc(var(--pad-section) + .1rem);
+  }
+
+  .std-numerals { font-size: clamp(2rem, 8.8vw, 3.4rem); }
+
+  .fireflies i:nth-child(3n) { display: none; }
+
+  .seal { width: 58px; height: 58px; }
+  .seal__initials { font-size: 1.3rem; }
+
+  .dresscode-rose {
+    width: 84px;
+    top: -36px;
+    right: -8px;
+  }
+
+  .std-actions .btn,
+  .closing-actions .btn,
+  .venue-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .closing-dust { width: 120vw; opacity: .45; }
+}
+
+@media (max-width: 560px) {
+  .particulars-row {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .particular { gap: .4rem; }
+
+  .day-words {
+    gap: 1.3rem 2rem;
+  }
+
+  /* on small screens the moments float — no single cable can span them */
+  .day-words::before { display: none; }
+
+  .day-word__bulb,
+  .day-word:nth-child(2n) .day-word__bulb,
+  .day-word:nth-child(3n) .day-word__bulb { margin-top: 1.3rem; }
+
+  .day-word__bulb::after,
+  .day-word:nth-child(2n) .day-word__bulb::after,
+  .day-word:nth-child(3n) .day-word__bulb::after { height: .95rem; }
+
+  .day-word__text { font-size: .95rem; }
+
+  .menu__list a { padding: .6em .3em; }
+
+  .gate-stage { width: min(340px, 86vw); }
+
+  .gates { height: clamp(260px, 42vh, 360px); }
+
+  .gate-crest { width: clamp(102px, 29vw, 132px); top: 8%; }
+
+  .gate-crest__initials { font-size: clamp(1.4rem, 6vw, 2rem); }
+
+  .gate-pediment { top: -28px; }
+
+  .opening__corner { opacity: .34; }
+
+  .opening__names { font-size: clamp(2.4rem, 12vw, 3.6rem); }
+
+  .watermark-script {
+    font-size: clamp(3.4rem, 18vw, 6rem);
+    top: 2.4%;
+  }
+
+  .rsvp-card { padding-inline: 1.15rem; }
+
+  .court-frame::before,
+  .court-frame::after { opacity: .35; }
+}
+
+/* very short phones (landscape opening) */
+@media (max-height: 640px) {
+  .gate-stage { width: min(320px, 62vh); }
+  .gates { height: clamp(200px, 36vh, 290px); }
+  .gate-crest { width: clamp(92px, 26vw, 118px); top: 8%; }
+  .opening__names { font-size: clamp(2rem, 8vh, 3rem); margin-bottom: .8rem; }
+  .opening__hint { margin-top: 1rem; }
+  .opening__open { margin-top: .9rem; }
+  .opening__skip { margin-top: .6rem; }
+  .gate-pediment { top: -24px; }
+  .opening__dust { display: none; }
+}
+
+/* graceful print — the invitation reads as text on paper */
+@media print {
+  .fireflies,
+  .understory,
+  .court-frame,
+  .nav,
+  .menu,
+  .hero-scroll,
+  #opening {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #111;
+  }
+}

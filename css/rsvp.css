@@ -1,0 +1,274 @@
+/* ═══════════════════════════════════════════════════════════════
+   FAEGLEN · rsvp.css
+   The reply card — enchanted ivory paper set into the twilight, with
+   the handwritten watermark behind it and a quiet, hairline form.
+   ═══════════════════════════════════════════════════════════════ */
+
+.scene--rsvp {
+  padding-bottom: calc(var(--pad-section) + 2rem);
+}
+
+.watermark-script {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  font-family: var(--font-script);
+  font-size: clamp(4.4rem, 14vw, 9.6rem);
+  line-height: 1;
+  white-space: nowrap;
+  color: color-mix(in srgb, var(--champagne) 8%, transparent);
+  pointer-events: none;
+  user-select: none;
+}
+
+.rsvp-card {
+  position: relative;
+  padding: clamp(2.6rem, 6vw, 4rem) clamp(1.6rem, 5vw, 3.4rem) clamp(2.4rem, 5vw, 3.2rem);
+  background:
+    linear-gradient(176deg,
+      color-mix(in srgb, var(--paper-raised) 96%, var(--champagne) 4%),
+      color-mix(in srgb, var(--ivory) 97%, var(--champagne) 3%));
+  border-radius: 6px;
+  box-shadow: var(--shadow-lift);
+  color: var(--ink);
+}
+
+.rsvp-card::after {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border: 1px solid color-mix(in srgb, var(--burgundy) 24%, transparent);
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.scene--rsvp .kicker--ink { color: var(--burgundy); margin-bottom: 1.1rem; }
+
+.rsvp-title {
+  text-align: center;
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  letter-spacing: .1em;
+  color: var(--ink);
+}
+
+.rsvp-deadline {
+  margin-top: .9rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+
+.rsvp-ornament {
+  width: min(300px, 70vw);
+  margin: 1.7rem auto 0;
+  color: var(--burgundy);
+}
+
+.rsvp-ornament svg {
+  width: 100%;
+  height: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+/* ── the form ──────────────────────────────────────────────────── */
+
+.rsvp-form {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  max-width: 27rem;
+  margin-inline: auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.field label,
+.field-legend {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.field input,
+.field textarea {
+  font: inherit;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper-raised) 60%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 26%, transparent);
+  border-radius: 3px;
+  padding: .78em .95em;
+  transition: border-color var(--t-fast) var(--ease-soft),
+              box-shadow var(--t-fast) var(--ease-soft);
+}
+
+.field textarea { resize: vertical; min-height: 3.2em; }
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--burgundy);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--burgundy) 55%, transparent);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: color-mix(in srgb, var(--charcoal) 72%, transparent);
+  font-style: italic;
+}
+
+.field-error {
+  font-size: .84rem;
+  color: #8a3c2e;
+}
+
+.field.is-invalid input,
+.field.is-invalid textarea {
+  border-color: #b45544;
+  box-shadow: 0 0 0 1px color-mix(in srgb, #b45544 50%, transparent);
+}
+
+/* attendance — gold diamonds */
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  cursor: pointer;
+  padding: .45em .2em;
+}
+
+.choice input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.choice .diamond {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  flex: none;
+  transform: rotate(45deg);
+  border: 1px solid var(--burgundy);
+  transition: background-color var(--t-fast) var(--ease-soft),
+              box-shadow var(--t-fast) var(--ease-soft);
+}
+
+.choice input:checked + .diamond {
+  background: var(--burgundy);
+  box-shadow: 0 0 0 2.5px color-mix(in srgb, var(--burgundy) 26%, transparent);
+}
+
+.choice input:focus-visible + .diamond {
+  outline: 1.5px solid var(--burgundy);
+  outline-offset: 3px;
+}
+
+.choice .text {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  color: var(--ink);
+}
+
+.rsvp-honeypot {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ── actions & status ──────────────────────────────────────────── */
+
+.rsvp-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: .4rem;
+}
+
+.rsvp-note {
+  font-size: .85rem;
+  line-height: 1.6;
+  color: var(--charcoal);
+  text-align: center;
+  max-width: 34ch;
+}
+
+.rsvp-note strong { color: var(--ink-soft); font-weight: 600; }
+
+.rsvp-status {
+  min-height: 1.4em;
+  font-size: .9rem;
+  text-align: center;
+}
+
+.rsvp-status.is-error { color: #8a3c2e; }
+
+/* ── the reply preview ─────────────────────────────────────────── */
+
+.rsvp-preview {
+  margin-top: 2.2rem;
+  text-align: center;
+  outline: none;
+}
+
+.script-intro {
+  font-family: var(--font-script);
+  font-size: clamp(1.6rem, 4.4vw, 2.2rem);
+  color: var(--burgundy);
+}
+
+.rsvp-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1.8rem auto 0;
+  max-width: 32rem;
+  text-align: left;
+}
+
+.rsvp-summary > div {
+  padding: .9rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--paper-raised) 55%, transparent);
+}
+
+.rsvp-summary dt {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+
+.rsvp-summary dd {
+  margin: .3rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.rsvp-preview .rsvp-actions { margin-top: 1.8rem; }

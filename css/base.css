@@ -1,0 +1,642 @@
+/* ═══════════════════════════════════════════════════════════════
+   AURELIA · base.css
+   The storybook beneath every scene: the morning-sky gradient,
+   the barely-there scatter of wishes, the understory glade, the
+   bower frame, the drifting dust motes and wish-sparkles. Plus
+   the typographic voices, buttons, navigation and the reveal
+   grammar shared by every section.
+   ═══════════════════════════════════════════════════════════════ */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--moonlit);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  background-color: var(--night);
+}
+
+h1, h2, h3, h4, p, blockquote, figure, ol, ul, dl, fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset { border: 0; min-width: 0; }
+
+img { max-width: 100%; display: block; }
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a { color: inherit; }
+
+[hidden] { display: none !important; }
+
+::selection {
+  background: color-mix(in srgb, var(--rose) 38%, transparent);
+  color: var(--wine);
+}
+
+:focus-visible {
+  outline: 1.5px solid var(--champagne);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── the morning sky ─────────────────────────────────────────────
+   Painted once, fixed, in four soft layers:
+   1. a warm wish-light glowing where the sun clears the trees
+   2. dawn blush pooling at the horizon line
+   3. wisteria mist breathing at the edges
+   4. the pearl ivory sky carrying it all                        */
+
+body {
+  background-image:
+    radial-gradient(120% 90% at 50% -14%,
+      color-mix(in srgb, var(--candle) 52%, transparent) 0%,
+      color-mix(in srgb, var(--candle) 22%, transparent) 34%,
+      transparent 62%),
+    radial-gradient(150% 120% at 50% 118%,
+      color-mix(in srgb, var(--rose) 24%, transparent) 0%,
+      transparent 52%),
+    radial-gradient(130% 100% at -10% 42%,
+      color-mix(in srgb, var(--crimson) 14%, transparent) 0%,
+      transparent 55%),
+    radial-gradient(130% 100% at 110% 46%,
+      color-mix(in srgb, var(--sage) 16%, transparent) 0%,
+      transparent 55%),
+    linear-gradient(180deg, var(--night) 0%, var(--canopy-1) 52%, var(--night-deep) 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('../assets/orn/scatter-tile.svg');
+  background-size: 460px 460px;
+  background-attachment: fixed;
+  opacity: .32;   /* barely there — found only by looking closely */
+}
+
+.understory {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    url('../assets/orn/understory-left.svg') left top / clamp(240px, 34vw, 480px) no-repeat,
+    url('../assets/orn/understory-right.svg') right top / clamp(220px, 30vw, 430px) no-repeat;
+  opacity: .4;    /* a breath of the glade — never competing with the page */
+}
+
+/* ── the drift — petals on the air ──────────────────────────
+   Twelve rose petals wandering through the light. Three flight
+   paths, staggered phases — each one sways on its own rhythm. */
+
+.fireflies {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.fireflies i {
+  position: absolute;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+  width: calc(var(--s, 3px) * 2.6);
+  height: calc(var(--s, 3px) * 2.1);
+  margin: calc(var(--s, 3px) / -2);
+  border-radius: 72% 28% 62% 38% / 58% 64% 36% 42%;
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--rose) 88%, white) 0%,
+    var(--rose) 44%,
+    color-mix(in srgb, var(--crimson) 62%, transparent) 100%);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--wine) 10%, transparent);
+  opacity: var(--o, .4);
+  animation:
+    ff-drift-a var(--t, 16s) ease-in-out infinite alternate,
+    ff-fall 6.4s ease-in-out infinite;
+  animation-delay: var(--d, 0s), var(--d, 0s);
+  will-change: transform, opacity;
+}
+
+.fireflies i:nth-child(3n) {
+  animation-name: ff-drift-b, ff-fall;
+}
+
+.fireflies i:nth-child(3n + 1) {
+  animation-name: ff-drift-c, ff-fall;
+  animation-duration: var(--t, 16s), 7.6s;
+}
+
+.fireflies i:nth-child(4n) {
+  animation-duration: var(--t, 16s), 5.2s;
+}
+
+@keyframes ff-drift-a {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  30%  { transform: translate(26px, -34px) rotate(52deg); }
+  62%  { transform: translate(-18px, 12px) rotate(-24deg); }
+  100% { transform: translate(38px, 26px) rotate(80deg); }
+}
+
+@keyframes ff-drift-b {
+  0%   { transform: translate(0, 0) rotate(10deg); }
+  34%  { transform: translate(-30px, 18px) rotate(-48deg); }
+  68%  { transform: translate(14px, -26px) rotate(30deg); }
+  100% { transform: translate(-40px, -6px) rotate(-76deg); }
+}
+
+@keyframes ff-drift-c {
+  0%   { transform: translate(0, 0) rotate(-14deg); }
+  28%  { transform: translate(18px, 30px) rotate(40deg); }
+  58%  { transform: translate(-24px, -16px) rotate(-30deg); }
+  100% { transform: translate(30px, -38px) rotate(64deg); }
+}
+
+@keyframes ff-fall {
+  0%, 100% { opacity: var(--o, .4); }
+  46%      { opacity: calc(var(--o, .4) * .18); }
+  60%      { opacity: var(--o, .4); }
+  74%      { opacity: calc(var(--o, .4) * .34); }
+}
+
+/* ── the bower frame — a hairline at the edge of the storybook ── */
+
+.court-frame {
+  position: fixed;
+  inset: 10px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.court-frame__band {
+  position: absolute;
+  inset: 0;
+  border: 1px solid color-mix(in srgb, var(--champagne) 22%, transparent);
+}
+
+.court-frame::before,
+.court-frame::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  margin-left: -1.5px;
+  border-radius: 50%;
+  background: var(--champagne);
+  box-shadow: 0 0 8px 3px color-mix(in srgb, var(--candle) 60%, transparent);
+  opacity: .6;
+}
+
+.court-frame::before { top: 3px; }
+.court-frame::after  { bottom: 3px; }
+
+/* ── typographic voices ────────────────────────────────────────── */
+
+.script,
+.hero-amp,
+.closing-names,
+.menu__brand {
+  font-family: var(--font-script);
+  font-weight: 400;
+}
+
+.hand {
+  font-family: var(--font-hand);
+  font-weight: 400;
+}
+
+.label-caps,
+.eyebrow,
+.kicker {
+  font-family: var(--font-body);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .34em;
+}
+
+.eyebrow {
+  font-size: var(--fs-eyebrow);
+  color: var(--gilding-deep);
+}
+
+.kicker {
+  font-size: var(--fs-eyebrow);
+  color: var(--champagne-soft);
+}
+
+.kicker--center {
+  display: block;
+  text-align: center;
+}
+
+.kicker--ink { color: var(--burgundy); }
+
+.label-caps { font-size: var(--fs-eyebrow); }
+
+.display {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  font-size: var(--fs-h2);
+  line-height: 1.14;
+  letter-spacing: .02em;
+  color: var(--moonlit);
+}
+
+.display .script {
+  display: block;
+  font-size: .84em;
+  color: var(--champagne-soft);
+}
+
+.prose {
+  font-family: var(--font-display);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: 1.72;
+  color: color-mix(in srgb, var(--moonlit) 92%, transparent);
+}
+
+.prose--dropcap::first-letter {
+  font-family: var(--font-editorial);
+  font-size: 3.1em;
+  line-height: .82;
+  float: left;
+  padding: .08em .12em 0 0;
+  color: var(--gilding-deep);
+}
+
+.foil {
+  background: linear-gradient(168deg,
+    var(--gilding-deep) 6%,
+    var(--champagne) 30%,
+    var(--gilding) 48%,
+    var(--champagne) 66%,
+    var(--gilding-deep) 94%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 1px 0 color-mix(in srgb, white 55%, transparent));
+}
+
+/* ── layout primitives ─────────────────────────────────────────── */
+
+.container {
+  width: min(var(--w-content), 100% - var(--pad-gutter) * 2);
+  margin-inline: auto;
+}
+
+.container--narrow { width: min(var(--w-narrow), 100% - var(--pad-gutter) * 2); }
+
+.scene {
+  position: relative;
+  padding: var(--pad-section) 0;
+  overflow-x: clip;
+}
+
+main { position: relative; z-index: 1; }
+
+/* ── buttons ───────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .7em;
+  padding: 1em 1.9em;
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 400;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--wine);
+  border: 1px solid color-mix(in srgb, var(--champagne) 52%, transparent);
+  border-radius: 4px;
+  background: var(--glass);
+  box-shadow: 0 1px 0 color-mix(in srgb, white 70%, transparent) inset;
+  transition: background-color var(--t-fast) var(--ease-soft),
+              border-color var(--t-fast) var(--ease-soft),
+              color var(--t-fast) var(--ease-soft),
+              box-shadow var(--t-fast) var(--ease-soft);
+}
+
+.btn:hover {
+  border-color: color-mix(in srgb, var(--champagne) 85%, transparent);
+  background: color-mix(in srgb, var(--candle) 18%, var(--glass));
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--candle) 34%, transparent);
+}
+
+.btn .icon { width: 1.35em; height: 1.35em; fill: none; stroke: currentColor; stroke-width: 1.5; flex: none; }
+
+.btn--ink {
+  color: var(--ivory);
+  background: linear-gradient(170deg, var(--gilding-deep), var(--champagne) 52%, var(--champagne-soft));
+  border-color: transparent;
+  text-shadow: 0 1px 0 color-mix(in srgb, var(--burgundy-deep) 55%, transparent);
+}
+
+.btn--ink:hover {
+  color: #fffaf0;
+  background: linear-gradient(170deg, var(--champagne-soft), var(--gilding-deep) 52%, var(--burgundy));
+  box-shadow: 0 8px 30px color-mix(in srgb, var(--candle) 46%, transparent);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: color-mix(in srgb, var(--wine) 20%, transparent);
+  color: color-mix(in srgb, var(--wine) 78%, transparent);
+}
+
+.btn--ghost:hover {
+  border-color: color-mix(in srgb, var(--champagne) 60%, transparent);
+  color: var(--wine);
+  background: color-mix(in srgb, var(--candle) 10%, transparent);
+}
+
+.btn--ink.btn--ghost {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+  border-color: color-mix(in srgb, var(--ink) 30%, transparent);
+  text-shadow: none;
+}
+
+.btn--ink.btn--ghost:hover {
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  box-shadow: none;
+}
+
+/* ── navigation ────────────────────────────────────────────────── */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 12;
+  padding: 0 clamp(1rem, 3.4vw, 2.4rem);
+  transition: background-color var(--t-med) var(--ease-soft),
+              box-shadow var(--t-med) var(--ease-soft),
+              backdrop-filter var(--t-med) var(--ease-soft);
+}
+
+.nav.is-scrolled {
+  background: color-mix(in srgb, var(--ivory) 82%, transparent);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--champagne) 20%, transparent),
+              0 12px 40px color-mix(in srgb, var(--wine) 10%, transparent);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 62px;
+}
+
+.nav__mark {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  text-decoration: none;
+}
+
+.nav__emblem {
+  width: 52px;
+  height: 35px;
+  color: var(--champagne-soft);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  opacity: .95;
+}
+
+.nav__initials {
+  font-size: 1.15rem;
+  color: var(--moonlit);
+}
+
+.nav__links {
+  display: flex;
+  gap: clamp(1.1rem, 2.6vw, 2.2rem);
+}
+
+.nav__links a {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: color-mix(in srgb, var(--wine) 62%, transparent);
+  padding: .4em 0;
+  border-bottom: 1px solid transparent;
+  transition: color var(--t-fast) var(--ease-soft),
+              border-color var(--t-fast) var(--ease-soft);
+}
+
+.nav__links a:hover,
+.nav__links a[aria-current="true"] {
+  color: var(--wine);
+  border-bottom-color: color-mix(in srgb, var(--champagne) 62%, transparent);
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.nav__icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--wine) 20%, transparent);
+  color: color-mix(in srgb, var(--wine) 74%, transparent);
+  background: color-mix(in srgb, var(--ivory) 40%, transparent);
+  transition: color var(--t-fast) var(--ease-soft),
+              border-color var(--t-fast) var(--ease-soft);
+}
+
+.nav__icon-btn:hover {
+  color: var(--wine);
+  border-color: color-mix(in srgb, var(--champagne) 62%, transparent);
+}
+
+.nav__icon-btn .icon {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+/* ── full-screen scene index ───────────────────────────────────── */
+
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.2rem, 4vw, 2.4rem);
+  background:
+    radial-gradient(140% 100% at 50% -20%,
+      color-mix(in srgb, var(--candle) 30%, transparent) 0%,
+      transparent 52%),
+    color-mix(in srgb, var(--ivory) 96%, transparent);
+  overflow-y: auto;
+}
+
+.menu__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(1.4rem, 5vh, 3rem);
+}
+
+.menu__brand {
+  font-size: clamp(1.5rem, 4.6vw, 2.1rem);
+  color: var(--moonlit);
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.menu__list a {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  padding: .72em .4em;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--champagne) 16%, transparent);
+  transition: background-color var(--t-fast) var(--ease-soft);
+}
+
+.menu__list a:hover { background: color-mix(in srgb, var(--candle) 10%, transparent); }
+
+.menu__list em {
+  font-family: var(--font-editorial);
+  font-style: normal;
+  font-size: .95rem;
+  color: var(--champagne-soft);
+  min-width: 1.8em;
+}
+
+.menu__list span {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.15rem, 3.6vw, 1.5rem);
+  letter-spacing: .06em;
+  color: color-mix(in srgb, var(--moonlit) 88%, transparent);
+}
+
+.menu__foot {
+  margin-top: clamp(1.4rem, 5vh, 3rem);
+  text-align: center;
+  color: var(--night-faint);
+}
+
+/* ── reveal grammar ────────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .9s var(--ease-soft), transform .9s var(--ease-soft);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── intro locks & fallbacks ───────────────────────────────────── */
+
+body.intro-pending { overflow: hidden; height: 100svh; }
+
+body.intro-pending .nav,
+body.intro-pending main,
+body.intro-pending .court-frame,
+body.intro-pending .understory,
+body.intro-pending .fireflies { opacity: 0; pointer-events: none; }
+
+html.no-js #opening { display: none; }
+html.no-js body { overflow: auto; height: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fireflies i {
+    animation: none;
+    opacity: calc(var(--o, .4) * .5);
+  }
+}
+
+/* ── svg definitions & icons ───────────────────────────────────── */
+
+.svg-definitions {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* fairyland symbol strokes — the library draws in currentColor */
+.svg-definitions .f {
+  fill: currentColor;
+  fill-opacity: var(--fx-fill, .13);
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+
+.svg-definitions .s {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.svg-definitions .s--thin { stroke-width: 1.15; opacity: .72; }
+
+.svg-definitions .dot { fill: currentColor; }
+.svg-definitions .halo { fill: none; stroke: currentColor; stroke-opacity: .4; stroke-width: 1; }
+
+.icon { fill: none; stroke: currentColor; }

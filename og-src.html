@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Great+Vibes&family=Cormorant+Garamond:ital@0;1&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+body { margin:0; width:1200px; height:630px; overflow:hidden; background:#FBF3EF; }
+.cover { width:1200px; height:630px; position:relative;
+  background:
+    radial-gradient(110% 90% at 50% -12%, #FBE4D4 0%, rgba(251,228,212,0) 46%),
+    radial-gradient(120% 90% at 50% 116%, #F6DCE2 0%, rgba(246,220,226,0) 52%),
+    radial-gradient(90% 80% at -6% 44%, #F0E3E0 0%, rgba(240,227,224,0) 55%),
+    radial-gradient(90% 80% at 106% 46%, #E9EDE3 0%, rgba(233,237,227,0) 55%),
+    linear-gradient(180deg, #FBF3EF 0%, #F6EAE4 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+.glow { position:absolute; top:10px; left:50%; transform:translateX(-50%);
+  width:620px; height:620px; border-radius:50%;
+  background:radial-gradient(circle, rgba(226,183,158,.32) 0%, rgba(193,138,112,.10) 42%, transparent 68%); }
+.vine { position:absolute; opacity:.5; }
+.vl { left:-26px; top:-30px; }
+.vr { right:-30px; top:-24px; transform:scaleX(-1); }
+.swing { position:relative; width:252px; filter:drop-shadow(0 16px 34px rgba(91,54,68,.20)); margin-top:0; }
+.eyebrow { font-family:'Jost',sans-serif; font-weight:300; font-size:15px; letter-spacing:.4em; text-transform:uppercase; color:#AC8049; margin-top:10px; }
+.names { font-family:'Prata',serif; font-size:54px; letter-spacing:.04em; color:#5B3644; margin-top:10px; }
+.names .amp { font-family:'Great Vibes',cursive; color:#AC8049; font-size:52px; padding:0 14px; }
+.line { width:430px; height:1px; margin:14px 0 12px;
+  background:linear-gradient(90deg, transparent, rgba(193,155,99,.8), transparent); position:relative; }
+.line i { position:absolute; left:50%; top:-4.5px; width:9px; height:9px; transform:translateX(-50%) rotate(45deg);
+  border:1px solid rgba(172,128,73,.85); background:#FFFCFA; }
+.date { font-family:'Jost',sans-serif; font-weight:300; font-size:19px; letter-spacing:.44em; text-transform:uppercase; color:#AC8049; }
+.sub { margin-top:10px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:21px; color:#7C5964; }
+.wordmark { position:absolute; bottom:24px; left:0; right:0; font-family:'Jost',sans-serif;
+  font-weight:300; font-size:12px; letter-spacing:.5em; text-transform:uppercase; color:#B08D96; }
+</style></head>
+<body><div class="cover">
+  <div class="glow"></div>
+  <img class="vine vl" src="assets/orn/understory-left.svg" width="380" alt="">
+  <img class="vine vr" src="assets/orn/understory-right.svg" width="360" alt="">
+  <img class="swing" src="assets/art/swing-couple.png" alt="">
+  <div class="eyebrow">Together with their families</div>
+  <div class="names">Elowen <span class="amp">&amp;</span> Finnian</div>
+  <div class="line"><i></i></div>
+  <div class="date">19 · 06 · 2027</div>
+  <div class="sub">an afternoon of roses, ribbons and dancing until the stars come out</div>
+  <div class="wordmark">Amoris · Invitation Atelier</div>
+</div></body></html>
