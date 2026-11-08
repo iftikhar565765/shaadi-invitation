@@ -838,7 +838,8 @@
     if (scene) scene.hidden = false;
     list.innerHTML = items.map(function (item) {
       return '<li class="day-word reveal">' +
-        '<span class="day-word__bulb" aria-hidden="true"></span>' +
+        '<span class="day-word__bulb" aria-hidden="true">' +
+        '<svg viewBox="-12 -12 24 24"><use href="#orn-marigold"></use></svg></span>' +
         '<span class="day-word__text" data-editor-path="moments.' + item.index + '">' +
         escapeHTML(item.word.trim()) + '</span></li>';
     }).join('');

@@ -100,63 +100,142 @@
     </symbol>
 
     <defs>
+      <!-- theme-aware gold: the stops are styled by CSS, so the four
+           moods (marigold, rani, peacock, sindoor) relight every jewel -->
+      <linearGradient id="grad-gold" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" class="gs-hi"/>
+        <stop offset=".48" class="gs-md"/>
+        <stop offset="1" class="gs-lo"/>
+      </linearGradient>
+      <linearGradient id="grad-gold-hi" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" class="gs-hi"/>
+        <stop offset="1" class="gs-md"/>
+      </linearGradient>
+      <linearGradient id="grad-gold-soft" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" class="gs-md"/>
+        <stop offset="1" class="gs-lo"/>
+      </linearGradient>
+      <linearGradient id="grad-rule" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" class="gs-lo"/>
+        <stop offset=".5" class="gs-hi"/>
+        <stop offset="1" class="gs-lo"/>
+      </linearGradient>
+      <radialGradient id="grad-halo" cx=".5" cy=".5" r=".5">
+        <stop offset="0" class="gs-halo"/>
+        <stop offset=".62" class="gs-halo-mid"/>
+        <stop offset="1" class="gs-halo-edge"/>
+      </radialGradient>
+      <!-- literal florals: a marigold is always a marigold -->
+      <radialGradient id="grad-marigold" cx=".38" cy=".34" r=".86">
+        <stop offset="0" stop-color="#FFE38A"/>
+        <stop offset=".4" stop-color="#F7A928"/>
+        <stop offset=".74" stop-color="#E07E12"/>
+        <stop offset="1" stop-color="#B3560A"/>
+      </radialGradient>
+      <radialGradient id="grad-marigold-in" cx=".4" cy=".36" r=".85">
+        <stop offset="0" stop-color="#FFED9E"/>
+        <stop offset=".55" stop-color="#FFC24E"/>
+        <stop offset="1" stop-color="#E8890C"/>
+      </radialGradient>
+      <radialGradient id="grad-flame" cx=".5" cy=".68" r=".85">
+        <stop offset="0" stop-color="#FFF7DC"/>
+        <stop offset=".45" stop-color="#FFD24E"/>
+        <stop offset="1" stop-color="#F08A2A"/>
+      </radialGradient>
+      <linearGradient id="grad-leaf" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#8FB89B"/>
+        <stop offset="1" stop-color="#3E6B4F"/>
+      </linearGradient>
+      <linearGradient id="grad-lotus" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#F9C6D8"/>
+        <stop offset=".55" stop-color="#E4749C"/>
+        <stop offset="1" stop-color="#C2477A"/>
+      </linearGradient>
+      <linearGradient id="grad-lotus-2" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#EFA8C2"/>
+        <stop offset="1" stop-color="#A93962"/>
+      </linearGradient>
+      <radialGradient id="grad-peacock" cx=".42" cy=".34" r=".9">
+        <stop offset="0" stop-color="#63CFA6"/>
+        <stop offset=".52" stop-color="#22795B"/>
+        <stop offset="1" stop-color="#123E2C"/>
+      </radialGradient>
+      <linearGradient id="grad-ruby" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#D8536A"/>
+        <stop offset="1" stop-color="#8C2332"/>
+      </linearGradient>
+
       <g id="p-petal">
-        <path class="f" d="M0 -3.1 C 2.1 -3.7 3.8 -3 4.4 -1.2 C 4.9 .6 3.6 2.4 1.6 2.6 C .2 2.7 -.9 1.9 -1.1 .8 L -1.1 .2 C -1.6 -.9 -1.2 -2.3 0 -3.1 Z"/>
+        <path class="g-gold-soft" d="M0 -3.1 C 2.1 -3.7 3.8 -3 4.4 -1.2 C 4.9 .6 3.6 2.4 1.6 2.6 C .2 2.7 -.9 1.9 -1.1 .8 L -1.1 .2 C -1.6 -.9 -1.2 -2.3 0 -3.1 Z"/>
       </g>
       <g id="p-leaf">
-        <path class="f" d="M0 0 Q 6.4 -7.4 15.2 -8.2 Q 7.6 -1 0 0 Z"/>
-        <path class="v" d="M1.2 -.8 Q 7 -2.6 12.6 -6.8"/>
+        <path class="g-leaf" d="M0 0 Q 6.4 -7.4 15.2 -8.2 Q 7.6 -1 0 0 Z"/>
+        <path class="leaf-v" d="M1.2 -.8 Q 7 -2.6 12.6 -6.8"/>
       </g>
       <g id="p-marigold">
-        <circle class="f" r="7.6"/>
-        <circle class="m-ring" r="5.1"/>
-        <circle class="m-heart" r="2.5"/>
+        <g class="g-marigold">
+          <circle r="7.3"/>
+          <circle cx="5.9" cy="0" r="2.55"/><circle cx="4.17" cy="4.17" r="2.55"/>
+          <circle cx="0" cy="5.9" r="2.55"/><circle cx="-4.17" cy="4.17" r="2.55"/>
+          <circle cx="-5.9" cy="0" r="2.55"/><circle cx="-4.17" cy="-4.17" r="2.55"/>
+          <circle cx="0" cy="-5.9" r="2.55"/><circle cx="4.17" cy="-4.17" r="2.55"/>
+        </g>
+        <g class="g-marigold-in">
+          <circle r="4.5"/>
+          <circle cx="3.2" cy="0" r="1.5"/><circle cx="2.26" cy="2.26" r="1.5"/>
+          <circle cx="0" cy="3.2" r="1.5"/><circle cx="-2.26" cy="2.26" r="1.5"/>
+          <circle cx="-3.2" cy="0" r="1.5"/><circle cx="-2.26" cy="-2.26" r="1.5"/>
+          <circle cx="0" cy="-3.2" r="1.5"/><circle cx="2.26" cy="-2.26" r="1.5"/>
+        </g>
+        <circle class="mg-core" r="1.75"/>
       </g>
       <g id="p-bell">
-        <path class="s s--thin" d="M0 -6.6 L 0 -4.9 M-3.7 -1 C -3.7 -3.8 -2 -4.9 0 -4.9 C 2 -4.9 3.7 -3.8 3.7 -1 L 4.2 1.2 L -4.2 1.2 Z M-2.2 1.2 C -2.2 2.3 -1.2 3.1 0 3.1 C 1.2 3.1 2.2 2.3 2.2 1.2"/>
-        <circle class="dot" cx="0" cy="4.2" r="1.05"/>
+        <path class="bell-stem" d="M0 -6.4 L 0 -4.7"/>
+        <path class="g-gold" d="M-3.7 -1 C -3.7 -3.8 -2 -4.9 0 -4.9 C 2 -4.9 3.7 -3.8 3.7 -1 L 4.2 1.4 L -4.2 1.4 Z"/>
+        <path class="bell-rim" d="M-4.2 1.4 L 4.2 1.4"/>
+        <path class="g-gold-hi" d="M-2.3 1.4 C -2.3 2.4 -1.2 3.2 0 3.2 C 1.2 3.2 2.3 2.4 2.3 1.4 Z"/>
+        <circle class="bell-clap" cx="0" cy="4.5" r="1.02"/>
       </g>
       <g id="p-flame">
-        <path class="f" d="M0 -5 C 1.5 -3 1.9 -1.4 .7 .3 L -.7 .3 C -1.9 -1.4 -1.5 -3 0 -5 Z"/>
+        <path class="g-flame" d="M0 -5 C 1.5 -3 1.9 -1.4 .7 .3 L -.7 .3 C -1.9 -1.4 -1.5 -3 0 -5 Z"/>
       </g>
     </defs>
 
-    <!-- THE PAISLEY (ambi) — the king of Indian borders -->
-    <symbol id="orn-paisley" viewBox="-14 -16 28 30">
-      <path class="s" style="stroke-width:1.9" d="M 10.4 -8.4 C 5.4 -11 -1 -10 -4.6 -6.6 C -9 -2.4 -9.2 5 -4.8 8.8 C -0.4 12.6 6.2 12 9.2 8 C 11.2 5.2 11.2 1 9 -1.8 C 10.2 -3.6 10.8 -5.8 10.4 -8.4 Z"/>
-      <path class="s s--thin" d="M 6 -2.6 C 3 -4.4 -0.6 -4 -2.6 -2 C -5.2 0.6 -5.2 5 -2.6 7.2 C -0.1 9.3 3.9 8.9 5.6 6.4 C 6.9 4.6 6.8 2 5.5 0.2 C 6.1 -0.7 6.2 -1.6 6 -2.6 Z"/>
-      <circle class="dot" cx="0.2" cy="2.4" r="1.3"/>
-      <circle class="halo" cx="0.2" cy="2.4" r="3.4"/>
-    </symbol>
+    <!-- THE PAISLEY (ambi) — filled zari gold, sindoor jewel at its heart -->
+    <g id="orn-paisley">
+      <path class="g-gold" d="M 0.8 -12 C -5.2 -12 -10 -7 -10 -0.4 C -10 6.6 -4.8 12.6 1.4 12.6 C 6.6 12.6 10.6 8.6 11.2 3.4 C 11.6 -0.6 9.8 -4.4 6.6 -6.4 C 8.6 -8.2 9.4 -10.4 8 -11.8 C 6 -13.6 2.8 -12.8 0.8 -12 Z"/>
+      <path class="paisley-inner" d="M 3.4 -6.2 C -0.4 -7.6 -4.6 -5.6 -5.6 -1.6 C -6.6 2.6 -4.4 6.6 -0.6 7.6 C 2.6 8.4 5.8 6.6 6.6 3.6"/>
+      <circle class="paisley-jewel" cx="0" cy="1.6" r="1.6"/>
+    </g>
 
-    <!-- THE LOTUS — Lakshmi's seat -->
-    <symbol id="orn-lotus" viewBox="0 0 96 56">
-      <path class="s" d="M48 6 C 52 16 52 28 48 38 C 44 28 44 16 48 6 Z"/>
-      <path class="s" d="M30 12 C 38 18 43 28 44 38 C 34 34 28 24 30 12 Z"/>
-      <path class="s" d="M66 12 C 58 18 53 28 52 38 C 62 34 68 24 66 12 Z"/>
-      <path class="s s--thin" d="M16 26 C 26 28 36 33 42 39 C 31 41 20 36 16 26 Z"/>
-      <path class="s s--thin" d="M80 26 C 70 28 60 33 54 39 C 65 41 76 36 80 26 Z"/>
-      <path class="s s--thin" d="M28 46 Q 48 40 68 46"/>
-      <circle class="dot" cx="48" cy="42" r="1.6"/>
-    </symbol>
+    <!-- THE LOTUS — Lakshmi's seat, blushing petals on a gold rule -->
+    <g id="orn-lotus">
+      <path class="g-lotus-2" d="M16 26 C 26 28 36 33 42 39 C 31 41 20 36 16 26 Z"/>
+      <path class="g-lotus-2" d="M80 26 C 70 28 60 33 54 39 C 65 41 76 36 80 26 Z"/>
+      <path class="g-lotus" d="M30 12 C 38 18 43 28 44 38 C 34 34 28 24 30 12 Z"/>
+      <path class="g-lotus" d="M66 12 C 58 18 53 28 52 38 C 62 34 68 24 66 12 Z"/>
+      <path class="g-lotus-hi" d="M48 6 C 52 16 52 28 48 38 C 44 28 44 16 48 6 Z"/>
+      <path class="lotus-base" d="M28 46 Q 48 40 68 46"/>
+      <circle class="lotus-dot" cx="48" cy="43" r="1.6"/>
+    </g>
 
-    <!-- THE DIYA — the little lamp -->
-    <symbol id="orn-diya" viewBox="0 0 64 56">
-      <use href="#p-flame" transform="translate(32 14) scale(1.5)"/>
-      <path class="s" d="M12 32 C 14 41 22 46 32 46 C 42 46 50 41 52 32 C 45 29.5 38.5 28.5 32 28.5 C 25.5 28.5 19 29.5 12 32 Z"/>
-      <path class="s s--thin" d="M14.5 33.5 Q 32 39.5 49.5 33.5"/>
-      <circle class="dot" cx="45" cy="39" r="1.3"/>
-      <circle class="halo" cx="32" cy="20" r="7.5"/>
-    </symbol>
+    <!-- THE DIYA — the little lamp, brass bowl and living flame -->
+    <g id="orn-diya">
+      <circle class="diya-halo" cx="32" cy="17" r="8.6"/>
+      <use href="#p-flame" transform="translate(32 15.5) scale(1.62)"/>
+      <path class="g-gold" d="M12 32 C 14 41 22 46 32 46 C 42 46 50 41 52 32 C 45 29.5 38.5 28.5 32 28.5 C 25.5 28.5 19 29.5 12 32 Z"/>
+      <path class="diya-rim" d="M14.5 33.5 Q 32 39.5 49.5 33.5"/>
+      <circle class="diya-dot" cx="45" cy="39" r="1.25"/>
+    </g>
 
-    <!-- THE MARIGOLD (genda phool) -->
-    <symbol id="orn-marigold" viewBox="-12 -12 24 24">
+    <!-- THE MARIGOLD (genda phool) — two collars of petals -->
+    <g id="orn-marigold">
       <use href="#p-marigold"/>
-    </symbol>
+    </g>
 
     <!-- THE TORAN — mango leaves & marigolds strung over the door -->
-    <symbol id="orn-toran" viewBox="0 0 640 96">
-      <path class="s" d="M6 14 Q 320 30 634 14"/>
+    <g id="orn-toran">
+      <path class="rule-garland" d="M6 14 Q 320 30 634 14"/>
       <g>
         <use href="#p-leaf" transform="translate(28 22) rotate(64) scale(1.5)"/>
         <use href="#p-marigold" transform="translate(64 34) scale(1.06)"/>
@@ -175,109 +254,117 @@
         <use href="#p-leaf" transform="translate(576 22) rotate(56) scale(1.4)"/>
         <use href="#p-marigold" transform="translate(606 30) scale(.92)"/>
       </g>
-    </symbol>
+    </g>
 
     <!-- THE MEHRAB — the scalloped palace arch -->
-    <symbol id="orn-mehrab" viewBox="0 0 360 320">
-      <path class="s" style="stroke-width:2" d="M14 314 C 20 214 52 108 180 26 C 308 108 340 214 346 314"/>
-      <path class="s s--thin" d="M36 314 C 44 226 74 124 180 46 C 286 124 316 226 324 314"/>
-      <path class="s s--thin" d="M180 26 Q 172 14 180 2 Q 188 14 180 26 Z"/>
-      <path class="s" style="stroke-width:1.6" d="M56 314 C 60 260 66 220 58 196 M304 314 C 300 260 294 220 302 196"/>
+    <g id="orn-mehrab">
+      <path class="arch-main" d="M14 314 C 20 214 52 108 180 26 C 308 108 340 214 346 314"/>
+      <path class="arch-thin" d="M36 314 C 44 226 74 124 180 46 C 286 124 316 226 324 314"/>
+      <path class="g-gold-hi" d="M180 26 Q 172 14 180 2 Q 188 14 180 26 Z"/>
+      <path class="arch-thin" d="M56 314 C 60 260 66 220 58 196 M304 314 C 300 260 294 220 302 196"/>
       <use href="#orn-paisley" transform="translate(180 84) scale(.62)"/>
-      <circle class="dot" cx="180" cy="46" r="2.2"/>
-      <circle class="halo" cx="180" cy="46" r="5"/>
+      <circle class="dot-gold" cx="180" cy="46" r="2.2"/>
+      <circle class="arch-halo" cx="180" cy="46" r="5.4"/>
       <use href="#p-marigold" transform="translate(46 250) scale(.78)"/>
       <use href="#p-marigold" transform="translate(314 250) scale(.78)"/>
       <use href="#p-bell" transform="translate(40 288) scale(.95)"/>
       <use href="#p-bell" transform="translate(320 288) scale(.95)"/>
-    </symbol>
+    </g>
 
     <!-- THE JALI — the lattice of the palace doors -->
-    <symbol id="orn-jali" viewBox="0 0 120 420">
-      <path class="s s--thin" d="M60 410 C 38 360 38 304 60 256 C 82 208 82 152 60 104 C 50 80 50 48 60 22"/>
-      <path class="s s--thin" d="M60 410 C 82 360 82 304 60 256 C 38 208 38 152 60 104 C 70 80 70 48 60 22"/>
+    <g id="orn-jali">
+      <path class="arch-thin" d="M60 410 C 38 360 38 304 60 256 C 82 208 82 152 60 104 C 50 80 50 48 60 22"/>
+      <path class="arch-thin" d="M60 410 C 82 360 82 304 60 256 C 38 208 38 152 60 104 C 70 80 70 48 60 22"/>
       <path class="jali-x" d="M46 96 L 74 122 M74 96 L 46 122 M46 156 L 74 182 M74 156 L 46 182 M46 216 L 74 242 M74 216 L 46 242 M46 276 L 74 302 M74 276 L 46 302 M46 336 L 74 362 M74 336 L 46 362"/>
       <use href="#orn-paisley" transform="translate(60 40) scale(.4)"/>
-      <circle class="dot" cx="60" cy="150" r="1.6"/>
-      <circle class="dot" cx="60" cy="270" r="1.6"/>
-      <circle class="dot" cx="60" cy="386" r="1.6"/>
-      <circle class="halo" cx="60" cy="386" r="3.6"/>
-    </symbol>
+      <circle class="dot-gold" cx="60" cy="150" r="1.6"/>
+      <circle class="dot-gold" cx="60" cy="270" r="1.6"/>
+      <circle class="dot-gold" cx="60" cy="386" r="1.6"/>
+      <circle class="arch-halo" cx="60" cy="386" r="3.8"/>
+    </g>
 
-    <!-- THE DIVIDER — hairline, paisley heart -->
-    <symbol id="orn-divider" viewBox="0 0 320 44">
-      <path class="s s--thin" d="M10 22 L 114 22 M206 22 L 310 22"/>
-      <circle class="dot" cx="124" cy="22" r="1.7"/>
-      <circle class="dot" cx="196" cy="22" r="1.7"/>
-      <use href="#orn-paisley" transform="translate(160 23) scale(1.22)"/>
-    </symbol>
+    <!-- THE DIVIDER — gold rules meeting a zari paisley -->
+    <g id="orn-divider">
+      <path class="rule" d="M10 22 L 108 22 M212 22 L 310 22"/>
+      <circle class="dot-gold" cx="119" cy="22" r="1.9"/>
+      <circle class="dot-gold" cx="201" cy="22" r="1.9"/>
+      <use href="#orn-paisley" transform="translate(160 23) scale(1.16)"/>
+    </g>
 
     <!-- THE RANGOLI — the threshold laid at the door -->
-    <symbol id="orn-rangoli" viewBox="0 0 420 60">
+    <g id="orn-rangoli">
       <g>
-        <path class="s s--thin" d="M210 8 L 226 30 L 210 52 L 194 30 Z"/>
-        <path class="s s--thin" d="M210 18 L 218 30 L 210 42 L 202 30 Z"/>
-        <path class="s s--thin" d="M150 16 L 162 30 L 150 44 L 138 30 Z M270 16 L 282 30 L 270 44 L 258 30 Z"/>
-        <path class="s s--thin" d="M104 20 L 112 30 L 104 40 L 96 30 Z M316 20 L 324 30 L 316 40 L 308 30 Z"/>
-        <circle class="dot" cx="70" cy="30" r="2"/>
-        <circle class="dot" cx="350" cy="30" r="2"/>
-        <circle class="halo" cx="70" cy="30" r="4.6"/>
-        <circle class="halo" cx="350" cy="30" r="4.6"/>
+        <path class="rangoli-d" d="M210 8 L 226 30 L 210 52 L 194 30 Z"/>
+        <path class="rangoli-d-in" d="M210 17 L 219 30 L 210 43 L 201 30 Z"/>
+        <path class="rangoli-d" d="M150 16 L 162 30 L 150 44 L 138 30 Z M270 16 L 282 30 L 270 44 L 258 30 Z"/>
+        <path class="rangoli-d" d="M104 20 L 112 30 L 104 40 L 96 30 Z M316 20 L 324 30 L 316 40 L 308 30 Z"/>
+        <circle class="rangoli-halo" cx="70" cy="30" r="5"/>
+        <circle class="dot-gold" cx="70" cy="30" r="2"/>
+        <circle class="rangoli-halo" cx="350" cy="30" r="5"/>
+        <circle class="dot-gold" cx="350" cy="30" r="2"/>
         <use href="#p-petal" transform="translate(38 30) rotate(-150) scale(1.2)"/>
         <use href="#p-petal" transform="translate(382 30) rotate(150) scale(1.2)"/>
         <use href="#p-marigold" transform="translate(178 30) scale(.42)"/>
         <use href="#p-marigold" transform="translate(242 30) scale(.42)"/>
       </g>
-    </symbol>
+    </g>
 
-    <!-- THE GARLAND SWAG — a hanging curve of the garden -->
-    <symbol id="orn-swag" viewBox="0 0 340 110">
-      <path class="s" d="M8 8 C 60 92 280 92 332 8"/>
-      <path class="s s--thin" d="M20 10 C 68 82 272 82 320 10"/>
-      <use href="#p-marigold" transform="translate(52 48) scale(.94)"/>
-      <use href="#p-leaf" transform="translate(84 70) rotate(36) scale(1.15)"/>
-      <use href="#p-marigold" transform="translate(122 74) scale(1.2)"/>
-      <use href="#p-bell" transform="translate(170 82) scale(1.05)"/>
-      <use href="#p-marigold" transform="translate(218 74) scale(1.2)"/>
-      <use href="#p-leaf" transform="translate(248 72) rotate(144) scale(1.15)"/>
-      <use href="#p-marigold" transform="translate(288 48) scale(.94)"/>
-    </symbol>
+    <!-- THE GARLAND SWAG — a hanging curve of the garden, in bloom -->
+    <g id="orn-swag">
+      <path class="arch-main" d="M8 8 C 60 92 280 92 332 8"/>
+      <path class="arch-thin" d="M20 10 C 68 82 272 82 320 10"/>
+      <use href="#p-leaf" transform="translate(24 22) rotate(52) scale(1.05)"/>
+      <use href="#p-marigold" transform="translate(52 48) scale(.9)"/>
+      <use href="#p-leaf" transform="translate(80 64) rotate(36) scale(1.1)"/>
+      <use href="#p-marigold" transform="translate(104 70) scale(.78)"/>
+      <use href="#p-leaf" transform="translate(136 78) rotate(28) scale(1.15)"/>
+      <use href="#p-marigold" transform="translate(150 78) scale(1.14)"/>
+      <use href="#p-leaf" transform="translate(190 82) rotate(20) scale(1.15)"/>
+      <use href="#p-bell" transform="translate(170 88) scale(1.05)"/>
+      <use href="#p-marigold" transform="translate(208 78) scale(1.14)"/>
+      <use href="#p-leaf" transform="translate(238 76) rotate(-24) scale(1.15)"/>
+      <use href="#p-marigold" transform="translate(252 70) scale(.78)"/>
+      <use href="#p-leaf" transform="translate(276 62) rotate(-40) scale(1.1)"/>
+      <use href="#p-marigold" transform="translate(288 48) scale(.9)"/>
+      <use href="#p-leaf" transform="translate(316 22) rotate(-52) scale(1.05)"/>
+    </g>
 
-    <!-- THE KALASH — the pot of plenty -->
-    <symbol id="orn-kalash" viewBox="0 0 72 84">
-      <path class="s" d="M26 20 C 26 14 30 10 36 10 C 42 10 46 14 46 20 L 48 26 L 24 26 Z"/>
-      <path class="s" d="M20 26 L 52 26 C 54 34 52 40 46 44 C 54 50 56 62 50 70 C 44 78 28 78 22 70 C 16 62 18 50 26 44 C 20 40 18 34 20 26 Z"/>
-      <path class="s s--thin" d="M36 44 C 40 52 40 62 36 70"/>
-      <circle class="dot" cx="36" cy="16" r="1.4"/>
+    <!-- THE KALASH — the pot of plenty, beaten brass -->
+    <g id="orn-kalash">
+      <path class="g-gold-hi" d="M26 20 C 26 14 30 10 36 10 C 42 10 46 14 46 20 L 48 26 L 24 26 Z"/>
+      <path class="g-gold" d="M20 26 L 52 26 C 54 34 52 40 46 44 C 54 50 56 62 50 70 C 44 78 28 78 22 70 C 16 62 18 50 26 44 C 20 40 18 34 20 26 Z"/>
+      <path class="kalash-shine" d="M36 44 C 40 52 40 62 36 70"/>
+      <circle class="dot-gold" cx="36" cy="16" r="1.4"/>
       <use href="#p-leaf" transform="translate(30 8) rotate(-70) scale(.8)"/>
       <use href="#p-leaf" transform="translate(42 8) rotate(70) scale(.8)"/>
-    </symbol>
+    </g>
 
-    <!-- THE PEACOCK FEATHER — Krishna's plume -->
-    <symbol id="orn-feather" viewBox="0 0 64 170">
-      <path class="s s--thin" d="M32 166 C 30 130 30 96 32 60"/>
-      <ellipse class="s" cx="32" cy="34" rx="17" ry="28"/>
-      <ellipse class="s s--thin" cx="32" cy="34" rx="10.5" ry="18.5"/>
-      <circle class="dot" cx="32" cy="34" r="3.6"/>
-      <circle class="halo" cx="32" cy="34" r="6.8"/>
-      <path class="s s--thin" d="M32 6 C 30 2 27 -1 24 -3 M32 6 C 34 2 37 -1 40 -3 M17 22 C 12 20 8 20 4 22 M47 22 C 52 20 56 20 60 22 M14 44 C 9 46 6 50 4 54 M50 44 C 55 46 58 50 60 54 M22 58 C 20 63 20 67 22 71 M42 58 C 44 63 44 67 42 71"/>
-    </symbol>
+    <!-- THE PEACOCK FEATHER — Krishna's plume, full bloom -->
+    <g id="orn-feather">
+      <path class="feather-stem" d="M32 166 C 30 130 30 96 32 60"/>
+      <ellipse class="g-peacock" cx="32" cy="34" rx="17" ry="28"/>
+      <ellipse class="feather-ring" cx="32" cy="34" rx="10.5" ry="18.5"/>
+      <ellipse class="g-peacock-hi" cx="32" cy="34" rx="4.4" ry="8"/>
+      <g class="feather-barb">
+        <path d="M32 6 C 30 2 27 -1 24 -3 M32 6 C 34 2 37 -1 40 -3 M17 22 C 12 20 8 20 4 22 M47 22 C 52 20 56 20 60 22 M14 44 C 9 46 6 50 4 54 M50 44 C 55 46 58 50 60 54 M22 58 C 20 63 20 67 22 71 M42 58 C 44 63 44 67 42 71"/>
+      </g>
+    </g>
 
-    <!-- THE GARLAND OF MOMENTS divider -->
-    <symbol id="orn-bud" viewBox="0 0 40 56">
-      <path class="f" d="M20 8 C 26 16 27 26 22 34 L 18 34 C 13 26 14 16 20 8 Z"/>
-      <path class="s s--thin" d="M20 34 C 20 40 20 46 20 52"/>
+    <!-- THE GARLAND OF MOMENTS bud -->
+    <g id="orn-bud">
+      <path class="g-gold-hi" d="M20 8 C 26 16 27 26 22 34 L 18 34 C 13 26 14 16 20 8 Z"/>
+      <path class="bud-stem" d="M20 34 C 20 40 20 46 20 52"/>
       <use href="#p-leaf" transform="translate(19 30) rotate(-140) scale(.7)"/>
       <use href="#p-leaf" transform="translate(21 26) rotate(60) scale(.6)"/>
-    </symbol>
+    </g>
 
-    <!-- THE NAV EMBLEM — paisley over diya light -->
-    <symbol id="orn-emblem" viewBox="0 0 96 64">
+    <!-- THE NAV EMBLEM — zari paisley over a diya arc -->
+    <g id="orn-emblem">
       <use href="#orn-paisley" transform="translate(48 26) scale(.78)"/>
-      <path class="s s--thin" d="M30 50 C 32 56 39 60 48 60 C 57 60 64 56 66 50"/>
-      <circle class="dot" cx="34" cy="53" r="1.3"/>
-      <circle class="dot" cx="62" cy="53" r="1.3"/>
-    </symbol>
+      <path class="emblem-arc" d="M30 50 C 32 56 39 60 48 60 C 57 60 64 56 66 50"/>
+      <circle class="dot-gold" cx="33" cy="53" r="1.3"/>
+      <circle class="dot-gold" cx="63" cy="53" r="1.3"/>
+    </g>
   </svg>
 
   <!-- ════════════════════════════════════════════════════════════
@@ -480,9 +567,9 @@
             </div>
             <p class="story-aside-note script" data-content="content.storyAside" data-element-key="folio-note-one">and they lived</p>
             <div class="story-captions" data-element-key="story-caption">
-              <span class="story-caption"><svg viewBox="0 0 120 28" aria-hidden="true"><use href="#orn-lotus" /></svg><span data-content="content.storyCaptionOne">the first namaste</span></span>
-              <span class="story-caption"><svg viewBox="0 0 120 28" aria-hidden="true"><use href="#orn-lotus" /></svg><span data-content="content.storyCaptionTwo">the sangeet spark</span></span>
-              <span class="story-caption"><svg viewBox="0 0 120 28" aria-hidden="true"><use href="#orn-lotus" /></svg><span data-content="content.storyCaptionFour">the seven steps</span></span>
+              <span class="story-caption"><svg viewBox="12 0 72 50" aria-hidden="true"><use href="#orn-lotus" /></svg><span data-content="content.storyCaptionOne">the first namaste</span></span>
+              <span class="story-caption"><svg viewBox="12 0 72 50" aria-hidden="true"><use href="#orn-lotus" /></svg><span data-content="content.storyCaptionTwo">the sangeet spark</span></span>
+              <span class="story-caption"><svg viewBox="12 0 72 50" aria-hidden="true"><use href="#orn-lotus" /></svg><span data-content="content.storyCaptionFour">the seven steps</span></span>
             </div>
           </aside>
         </div>
@@ -542,7 +629,7 @@
         <div class="programme" data-stagger>
           <article class="programme-item programme-item--sangeet reveal" data-element-key="detail-ceremony">
             <span class="programme-index" aria-hidden="true">Ⅰ</span>
-            <svg class="programme-orn" viewBox="0 0 24 30" aria-hidden="true"><use href="#p-bell" transform="translate(12 15)"/></svg>
+            <svg class="programme-orn" viewBox="5.5 5.5 13 16.5" aria-hidden="true"><use href="#p-bell" transform="translate(12 15)"/></svg>
             <h3 data-content="content.ceremonyLabel">The Sangeet Night</h3>
             <p class="programme-value" data-content="content.ceremonyTime">Friday, half past seven</p>
             <p class="programme-note" data-content="content.ceremonyNote">An evening of music and family performances — bring your dancing shoes.</p>
@@ -550,7 +637,7 @@
 
           <article class="programme-item programme-item--pheras reveal" data-element-key="detail-reception">
             <span class="programme-index" aria-hidden="true">Ⅱ</span>
-            <svg class="programme-orn" viewBox="0 0 64 56" aria-hidden="true"><use href="#orn-diya" /></svg>
+            <svg class="programme-orn" viewBox="9 5 46 44" aria-hidden="true"><use href="#orn-diya" /></svg>
             <h3 data-content="content.receptionLabel">The Pheras &amp; Varmala</h3>
             <p class="programme-value" data-content="content.receptionTime">Saturday, half past eight</p>
             <p class="programme-note" data-content="content.receptionNote">Seven vows around the sacred fire within the mandap, as the shehnai plays.</p>
@@ -558,7 +645,7 @@
 
           <article class="programme-item programme-item--reply reveal" data-element-key="detail-reply">
             <span class="programme-index" aria-hidden="true">Ⅲ</span>
-            <svg class="programme-orn" viewBox="0 0 64 170" aria-hidden="true"><use href="#orn-feather" /></svg>
+            <svg class="programme-orn" viewBox="14 2 44 80" aria-hidden="true"><use href="#orn-kalash" /></svg>
             <h3 data-content="content.kindlyReplyLabel">Kindly Reply</h3>
             <p class="programme-value">By <span data-content="rsvp.deadline">the first of October, 2027</span></p>
             <p class="programme-note" data-content="content.kindlyReplyNote">Kindly send your response using the reply card further below.</p>
@@ -566,7 +653,7 @@
 
           <article class="programme-item programme-item--haldi reveal" data-element-key="detail-haldi">
             <span class="programme-index" aria-hidden="true">Ⅳ</span>
-            <svg class="programme-orn" viewBox="-12 -12 24 24" aria-hidden="true"><use href="#orn-marigold" /></svg>
+            <svg class="programme-orn" viewBox="-9.5 -9.5 19 19" aria-hidden="true"><use href="#orn-marigold" /></svg>
             <h3 data-content="content.haldiLabel">The Haldi</h3>
             <p class="programme-value" data-content="content.haldiTime">Saturday, eleven in the morning</p>
             <p class="programme-note" data-content="content.haldiNote">A golden bath of turmeric, songs and blessings in the garden courtyard.</p>
@@ -574,7 +661,7 @@
 
           <article class="programme-item programme-item--mehndi reveal" data-element-key="detail-mehndi">
             <span class="programme-index" aria-hidden="true">Ⅴ</span>
-            <svg class="programme-orn" viewBox="-14 -16 28 30" aria-hidden="true"><use href="#orn-paisley" /></svg>
+            <svg class="programme-orn" viewBox="-10.5 -11.5 23 25" aria-hidden="true"><use href="#orn-paisley" /></svg>
             <h3 data-content="content.mehndiLabel">The Mehndi</h3>
             <p class="programme-value" data-content="content.mehndiTime">Friday, four in the afternoon</p>
             <p class="programme-note" data-content="content.mehndiNote">Henna, dholak songs and dance as the bride's hands are adorned.</p>
@@ -582,7 +669,7 @@
 
           <article class="programme-item programme-item--reception reveal" data-element-key="detail-feast">
             <span class="programme-index" aria-hidden="true">Ⅵ</span>
-            <svg class="programme-orn" viewBox="0 0 96 56" aria-hidden="true"><use href="#orn-lotus" /></svg>
+            <svg class="programme-orn" viewBox="14 2 68 48" aria-hidden="true"><use href="#orn-lotus" /></svg>
             <h3 data-content="content.feastLabel">The Reception</h3>
             <p class="programme-value" data-content="content.feastTime">Sunday, seven in the evening</p>
             <p class="programme-note" data-content="content.feastNote">A grand feast, the first dance and celebrations in the durbar hall.</p>

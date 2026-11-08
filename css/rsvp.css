@@ -30,8 +30,9 @@
 }
 .rsvp-paisley {
   position: absolute;
-  width: 30px;
+  width: 40px;
   color: var(--champagne-soft);
+  filter: drop-shadow(0 1.5px 4px rgba(122, 58, 10, .22));
 }
 .rsvp-paisley--tl { top: 16px; left: 16px; transform: scaleX(-1) rotate(-12deg); }
 .rsvp-paisley--tr { top: 16px; right: 16px; transform: rotate(-12deg); }

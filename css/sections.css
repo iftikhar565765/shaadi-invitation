@@ -30,9 +30,10 @@
 
 .hero-paisley {
   position: absolute;
-  width: clamp(46px, 5.4vw, 72px);
+  width: clamp(54px, 6vw, 84px);
   color: var(--gold);
-  opacity: .5;
+  opacity: .72;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, .35));
   pointer-events: none;
 }
 .hero-paisley--tl { top: clamp(240px, 32vh, 330px); left: calc(var(--gutter) + 4px); transform: scaleX(-1) rotate(-14deg); }
@@ -148,6 +149,19 @@
 .hero-scroll__bud { width: 22px; animation: bud-sway 3.2s ease-in-out infinite alternate; transform-origin: top center; }
 @keyframes bud-sway { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
 
+
+/* ── the jaali wash: a whisper of lattice over the ivory grounds ──
+   Low opacity by design — invisible at a glance, present if you look. */
+.scene--story::after, .scene--details::after, .scene--venue::after, .scene--rsvp::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cg fill='none' stroke='%23B0842C' stroke-width='1'%3E%3Cpath d='M22 8 C 28 14 28 22 22 26 C 16 22 16 14 22 8 Z'/%3E%3Cpath d='M66 8 C 72 14 72 22 66 26 C 60 22 60 14 66 8 Z'/%3E%3Cpath d='M44 30 C 50 36 50 44 44 48 C 38 44 38 36 44 30 Z'/%3E%3Cpath d='M22 52 C 28 58 28 66 22 70 C 16 66 16 58 22 52 Z'/%3E%3Cpath d='M66 52 C 72 58 72 66 66 70 C 60 66 60 58 66 52 Z'/%3E%3Cpath d='M0 44 Q 6 42 10 44 M78 44 Q 82 42 88 44 M30 0 Q 32 4 30 8 M58 0 Q 56 4 58 8 M30 80 Q 32 84 30 88 M58 80 Q 56 84 58 88'/%3E%3C/g%3E%3Ccircle cx='22' cy='17' r='1.1' fill='%23B0842C'/%3E%3Ccircle cx='66' cy='17' r='1.1' fill='%23B0842C'/%3E%3Ccircle cx='44' cy='39' r='1.1' fill='%23B0842C'/%3E%3Ccircle cx='22' cy='61' r='1.1' fill='%23B0842C'/%3E%3Ccircle cx='66' cy='61' r='1.1' fill='%23B0842C'/%3E%3C/svg%3E") 0 0 / 88px 88px repeat;
+  opacity: .16;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
 /* ═══ Ⅱ · THEIR STORY — the family album page ═══════════════ */
 .scene--story::before {
   content: '';
@@ -200,8 +214,9 @@
 }
 .quote-paisley {
   position: absolute;
-  width: 30px;
+  width: 40px;
   color: var(--champagne-soft);
+  filter: drop-shadow(0 1.5px 4px rgba(122, 58, 10, .22));
 }
 .quote-paisley--tl { top: 12px; left: 12px; transform: scaleX(-1) rotate(-12deg); }
 .quote-paisley--br { bottom: 12px; right: 12px; transform: rotate(-12deg); }
@@ -232,7 +247,7 @@
   font-size: 1.02rem;
   color: var(--ink-soft);
 }
-.story-caption svg { width: 74px; color: var(--champagne-soft); flex: none; }
+.story-caption svg { width: 58px; color: var(--champagne-soft); flex: none; filter: drop-shadow(0 2px 5px rgba(122, 58, 10, .18)); }
 
 /* ═══ Ⅲ · SAVE THE DATE — the shagun plate ══════════════════ */
 .scene--std { text-align: center; }
@@ -258,15 +273,16 @@
 }
 .plate-paisley {
   position: absolute;
-  width: 30px;
+  width: 40px;
   color: var(--champagne-soft);
+  filter: drop-shadow(0 1.5px 4px rgba(122, 58, 10, .22));
 }
 .plate-paisley--tl { top: 16px; left: 16px; transform: scaleX(-1) rotate(-12deg); }
 .plate-paisley--tr { top: 16px; right: 16px; transform: rotate(-12deg); }
 .plate-paisley--bl { bottom: 16px; left: 16px; transform: scaleX(-1) rotate(12deg); }
 .plate-paisley--br { bottom: 16px; right: 16px; transform: rotate(12deg); }
 
-.std-emblem { width: 58px; margin: 0 auto 14px; color: var(--burgundy); }
+.std-emblem { width: 68px; margin: 0 auto 14px; color: var(--burgundy); }
 .std-title { font-family: var(--font-editorial); font-weight: 400; font-size: clamp(2rem, 4vw, 2.8rem); color: var(--ink); }
 .std-crossing { font-size: clamp(1.5rem, 2.6vw, 1.9rem); color: var(--burgundy); margin-top: 2px; }
 .std-numerals { font-size: clamp(2.7rem, 6vw, 4rem); line-height: 1.1; margin-top: 18px; }
@@ -361,10 +377,13 @@
 }
 .programme-orn {
   position: absolute;
-  top: 34px; left: 50%;
+  top: 26px; left: 50%;
   transform: translateX(-50%);
-  width: 30px; height: 30px;
+  width: 54px; height: 54px;
+  padding: 6px;
   color: color-mix(in srgb, var(--ritual, var(--gold)) 88%, var(--ink) 12%);
+  background: radial-gradient(circle at 50% 44%, color-mix(in srgb, var(--ritual, var(--gold)) 17%, transparent) 0%, transparent 72%);
+  filter: drop-shadow(0 2px 4px rgba(122, 58, 10, .26));
 }
 .programme-item h3 {
   font-family: var(--font-editorial);
@@ -474,17 +493,17 @@
   gap: clamp(22px, 3.6vw, 44px);
   margin-top: clamp(44px, 6.6vh, 68px);
   position: relative;
-  padding-top: 34px;
+  padding-top: 40px;
 }
-/* the garland cable */
+/* the garland — a strung marigold rope over a gold cable */
 .day-words::before {
   content: '';
   position: absolute;
-  top: 0; left: 4%; right: 4%;
-  height: 3px;
-  border-radius: 3px;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--gold) 76%, #6d4f10) 12% 88%, transparent);
-  box-shadow: 0 1px 0 color-mix(in srgb, #ffedbe 24%, transparent);
+  top: 0; left: 2%; right: 2%;
+  height: 26px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='26'%3E%3Cpath d='M0 14 Q 23 22 46 14' fill='none' stroke='%23B8862B' stroke-opacity='.55' stroke-width='1.2'/%3E%3Cellipse cx='9' cy='13' rx='6.4' ry='3.8' fill='%233E6B4F' transform='rotate(-30 9 13)'/%3E%3Cellipse cx='9.4' cy='12.4' rx='5.6' ry='2.4' fill='%236B9878' transform='rotate(-30 9.4 12.4)'/%3E%3Ccircle cx='26' cy='12' r='8.4' fill='%23C96A12'/%3E%3Ccircle cx='26' cy='12' r='6.6' fill='%23E8890C'/%3E%3Ccircle cx='24.2' cy='9.8' r='2.4' fill='%23F7A928'/%3E%3Ccircle cx='28.6' cy='10.4' r='2.2' fill='%23F7A928'/%3E%3Ccircle cx='24.6' cy='14.4' r='2.2' fill='%23F7A928'/%3E%3Ccircle cx='28.2' cy='14.2' r='2.4' fill='%23E8890C'/%3E%3Ccircle cx='26' cy='12.2' r='2.6' fill='%23FFD75E'/%3E%3C/svg%3E") 0 0 / 46px 26px repeat-x;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, .4));
 }
 .day-word {
   display: grid;
@@ -492,7 +511,7 @@
   gap: 12px;
   position: relative;
 }
-/* the string hanging from the cable */
+/* the string hanging from the garland */
 .day-word::before {
   content: '';
   position: absolute;
@@ -501,21 +520,15 @@
   transform: translateX(-50%);
   background: linear-gradient(180deg, color-mix(in srgb, var(--gold) 70%, transparent), var(--gold-line));
 }
-/* the bloom */
+/* the bloom — a fresh genda phool hanging from the rope */
 .day-word__bulb {
-  width: clamp(38px, 4vw, 50px);
+  width: clamp(42px, 4.3vw, 54px);
   aspect-ratio: 1;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 42%, #ffd75e 0%, #f7a928 34%, #e8890c 62%, #b3560a 100%);
-  box-shadow:
-    inset 0 0 0 3px rgba(122, 62, 6, .5),
-    inset 0 6px 10px rgba(255, 236, 170, .55),
-    inset 0 -8px 12px rgba(112, 48, 4, .5),
-    0 8px 18px -6px rgba(0, 0, 0, .55);
   animation: bloom-sway 3.6s ease-in-out var(--sway-delay, 0s) infinite alternate;
   transform-origin: top center;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, .5));
 }
+.day-word__bulb svg { width: 100%; height: 100%; }
 .day-word:nth-child(odd) .day-word__bulb { --sway-delay: -1.8s; }
 @keyframes bloom-sway { from { transform: rotate(-3.5deg); } to { transform: rotate(3.5deg); } }
 .day-word__text {
@@ -538,7 +551,7 @@
   max-width: 22ch;
   margin: 10px auto 0;
 }
-.venue-swag { width: min(300px, 70vw); margin: 20px auto 0; color: var(--olive); }
+.venue-swag { width: min(380px, 82vw); margin: 20px auto 0; color: var(--olive); filter: drop-shadow(0 6px 14px rgba(61, 10, 20, .18)); }
 .venue-mandap {
   width: clamp(240px, 30vw, 380px);
   margin: clamp(20px, 4vh, 36px) auto 0;
