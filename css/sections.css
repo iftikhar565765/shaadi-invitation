@@ -28,17 +28,6 @@
 }
 @keyframes mandala-spin { to { transform: rotate(360deg); } }
 
-.hero-paisley {
-  position: absolute;
-  width: clamp(54px, 6vw, 84px);
-  color: var(--gold);
-  opacity: .72;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, .35));
-  pointer-events: none;
-}
-.hero-paisley--tl { top: clamp(240px, 32vh, 330px); left: calc(var(--gutter) + 4px); transform: scaleX(-1) rotate(-14deg); }
-.hero-paisley--tr { top: clamp(240px, 32vh, 330px); right: calc(var(--gutter) + 4px); transform: rotate(-14deg); }
-
 .hero-inner {
   position: relative;
   display: flex;
@@ -212,14 +201,6 @@
   padding: 40px 34px 32px;
   box-shadow: var(--shadow-card);
 }
-.quote-paisley {
-  position: absolute;
-  width: 40px;
-  color: var(--champagne-soft);
-  filter: drop-shadow(0 1.5px 4px rgba(122, 58, 10, .22));
-}
-.quote-paisley--tl { top: 12px; left: 12px; transform: scaleX(-1) rotate(-12deg); }
-.quote-paisley--br { bottom: 12px; right: 12px; transform: rotate(-12deg); }
 .story-quote__mark {
   font-size: 4.4rem;
   line-height: .4;
@@ -271,18 +252,7 @@
   box-shadow: var(--shadow-card);
   color: var(--ink);
 }
-.plate-paisley {
-  position: absolute;
-  width: 40px;
-  color: var(--champagne-soft);
-  filter: drop-shadow(0 1.5px 4px rgba(122, 58, 10, .22));
-}
-.plate-paisley--tl { top: 16px; left: 16px; transform: scaleX(-1) rotate(-12deg); }
-.plate-paisley--tr { top: 16px; right: 16px; transform: rotate(-12deg); }
-.plate-paisley--bl { bottom: 16px; left: 16px; transform: scaleX(-1) rotate(12deg); }
-.plate-paisley--br { bottom: 16px; right: 16px; transform: rotate(12deg); }
-
-.std-emblem { width: 68px; margin: 0 auto 14px; color: var(--burgundy); }
+.std-emblem { width: 62px; margin: 0 auto 16px; color: var(--champagne-soft); }
 .std-title { font-family: var(--font-editorial); font-weight: 400; font-size: clamp(2rem, 4vw, 2.8rem); color: var(--ink); }
 .std-crossing { font-size: clamp(1.5rem, 2.6vw, 1.9rem); color: var(--burgundy); margin-top: 2px; }
 .std-numerals { font-size: clamp(2.7rem, 6vw, 4rem); line-height: 1.1; margin-top: 18px; }
@@ -307,7 +277,7 @@
 .std-seal .seal__art { position: absolute; inset: 0; }
 .seal__initials { font-size: 1.7rem; color: #57350a; }
 
-/* ═══ Ⅳ · THE CELEBRATIONS — colour-coded rituals ════════════ */
+/* ═══ Ⅳ · THE CELEBRATIONS — one gold, clean line marks ═════ */
 .scene--details .details-head { text-align: center; }
 .scene--details .kicker { color: var(--burgundy); }
 .scene--details .display em { color: var(--burgundy); }
@@ -322,15 +292,15 @@
 .programme {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(18px, 2.6vw, 30px);
-  margin-top: clamp(36px, 5vh, 56px);
+  gap: clamp(22px, 3vw, 36px);
+  margin-top: clamp(40px, 5.5vh, 62px);
 }
 .programme-item {
   position: relative;
   background: var(--paper-raised);
   border: 1px solid var(--paper-line);
   border-radius: 150px 150px var(--radius-card) var(--radius-card);
-  padding: 76px 26px 30px;
+  padding: 38px 30px 34px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(61, 10, 20, .08), 0 20px 38px -20px rgba(61, 10, 20, .3);
   overflow: hidden;
@@ -338,52 +308,42 @@
 }
 .programme-item:hover { transform: translateY(-5px); box-shadow: 0 4px 8px rgba(61, 10, 20, .1), 0 28px 46px -20px rgba(61, 10, 20, .38); }
 
-/* the ritual colour washes the arch of each card */
+/* one quiet gold wash above every card — no ritual rainbow */
 .programme-item::before {
   content: '';
   position: absolute;
   inset: 0 0 auto;
-  height: 132px;
+  height: 148px;
   border-radius: inherit;
-  background: linear-gradient(180deg, var(--ritual, var(--gold)) 0%, transparent 100%);
-  opacity: .17;
+  background: linear-gradient(180deg, var(--champagne-soft) 0%, transparent 100%);
+  opacity: .1;
   pointer-events: none;
 }
 .programme-item::after {
   content: '';
   position: absolute;
   inset: 5px 5px auto;
-  height: 122px;
+  height: 138px;
   border-radius: 145px 145px 0 0;
-  border: 1px solid color-mix(in srgb, var(--ritual, var(--gold)) 55%, transparent);
+  border: 1px solid color-mix(in srgb, var(--champagne-soft) 52%, transparent);
   border-bottom: 0;
   opacity: .55;
   pointer-events: none;
 }
 
-.programme-item--sangeet   { --ritual: var(--rose); }
-.programme-item--pheras    { --ritual: var(--burgundy); }
-.programme-item--reply     { --ritual: var(--champagne); }
-.programme-item--haldi     { --ritual: #E8A820; }
-.programme-item--mehndi    { --ritual: var(--olive); }
-.programme-item--reception { --ritual: var(--crimson); }
-
 .programme-index {
   position: absolute;
-  top: 16px; left: 20px;
+  top: 18px; left: 22px;
   font-family: var(--font-editorial);
-  font-size: 1rem;
-  color: color-mix(in srgb, var(--ritual, var(--gold)) 78%, var(--ink) 22%);
+  font-size: .95rem;
+  color: var(--champagne-soft);
 }
+/* the mark — one minimalist line icon, one gold */
 .programme-orn {
-  position: absolute;
-  top: 26px; left: 50%;
-  transform: translateX(-50%);
-  width: 54px; height: 54px;
-  padding: 6px;
-  color: color-mix(in srgb, var(--ritual, var(--gold)) 88%, var(--ink) 12%);
-  background: radial-gradient(circle at 50% 44%, color-mix(in srgb, var(--ritual, var(--gold)) 17%, transparent) 0%, transparent 72%);
-  filter: drop-shadow(0 2px 4px rgba(122, 58, 10, .26));
+  position: relative;
+  width: 56px; height: 56px;
+  margin: 6px auto 20px;
+  color: var(--champagne-soft);
 }
 .programme-item h3 {
   font-family: var(--font-editorial);
@@ -393,20 +353,21 @@
   color: var(--ink);
 }
 .programme-value {
-  margin-top: 8px;
+  margin-top: 10px;
   font-family: var(--font-body);
   font-size: 11px;
   letter-spacing: .26em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--ritual, var(--burgundy)) 86%, var(--ink) 14%);
+  color: var(--burgundy);
 }
 .programme-note {
-  margin-top: 12px;
+  margin-top: 14px;
   font-family: var(--font-display);
   font-style: italic;
   font-size: .99rem;
   line-height: 1.6;
   color: var(--ink-soft);
+  padding-inline: 4px;
 }
 
 .details-orn { width: min(320px, 70vw); margin: clamp(40px, 6vh, 60px) auto 0; color: var(--champagne-soft); }
@@ -495,14 +456,14 @@
   position: relative;
   padding-top: 40px;
 }
-/* the garland — a strung marigold rope over a gold cable */
+/* the garland — one gold rope with a bead, strung over the scene */
 .day-words::before {
   content: '';
   position: absolute;
   top: 0; left: 2%; right: 2%;
   height: 26px;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='26'%3E%3Cpath d='M0 14 Q 23 22 46 14' fill='none' stroke='%23B8862B' stroke-opacity='.55' stroke-width='1.2'/%3E%3Cellipse cx='9' cy='13' rx='6.4' ry='3.8' fill='%233E6B4F' transform='rotate(-30 9 13)'/%3E%3Cellipse cx='9.4' cy='12.4' rx='5.6' ry='2.4' fill='%236B9878' transform='rotate(-30 9.4 12.4)'/%3E%3Ccircle cx='26' cy='12' r='8.4' fill='%23C96A12'/%3E%3Ccircle cx='26' cy='12' r='6.6' fill='%23E8890C'/%3E%3Ccircle cx='24.2' cy='9.8' r='2.4' fill='%23F7A928'/%3E%3Ccircle cx='28.6' cy='10.4' r='2.2' fill='%23F7A928'/%3E%3Ccircle cx='24.6' cy='14.4' r='2.2' fill='%23F7A928'/%3E%3Ccircle cx='28.2' cy='14.2' r='2.4' fill='%23E8890C'/%3E%3Ccircle cx='26' cy='12.2' r='2.6' fill='%23FFD75E'/%3E%3C/svg%3E") 0 0 / 46px 26px repeat-x;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='26'%3E%3Cpath d='M0 14 Q 23 22 46 14' fill='none' stroke='%23B8862B' stroke-opacity='.55' stroke-width='1.2'/%3E%3Ccircle cx='23' cy='16.5' r='2.4' fill='none' stroke='%23B8862B' stroke-opacity='.8' stroke-width='1.3'/%3E%3C/svg%3E") 0 0 / 46px 26px repeat-x;
   filter: drop-shadow(0 3px 5px rgba(0, 0, 0, .4));
 }
 .day-word {
@@ -520,10 +481,11 @@
   transform: translateX(-50%);
   background: linear-gradient(180deg, color-mix(in srgb, var(--gold) 70%, transparent), var(--gold-line));
 }
-/* the bloom — a fresh genda phool hanging from the rope */
+/* the bloom — a single gold line flower on its string */
 .day-word__bulb {
   width: clamp(42px, 4.3vw, 54px);
   aspect-ratio: 1;
+  color: var(--gold);
   animation: bloom-sway 3.6s ease-in-out var(--sway-delay, 0s) infinite alternate;
   transform-origin: top center;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, .5));
@@ -551,7 +513,7 @@
   max-width: 22ch;
   margin: 10px auto 0;
 }
-.venue-swag { width: min(380px, 82vw); margin: 20px auto 0; color: var(--olive); filter: drop-shadow(0 6px 14px rgba(61, 10, 20, .18)); }
+.venue-swag { width: min(380px, 82vw); margin: 20px auto 0; color: var(--champagne-soft); filter: drop-shadow(0 6px 14px rgba(61, 10, 20, .12)); }
 .venue-mandap {
   width: clamp(240px, 30vw, 380px);
   margin: clamp(20px, 4vh, 36px) auto 0;

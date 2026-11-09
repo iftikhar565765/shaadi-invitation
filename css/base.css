@@ -32,68 +32,25 @@ blockquote { quotes: none; }
   border-radius: 2px;
 }
 
-.svg-definitions { position: absolute; width: 0; height: 0; overflow: hidden; }
-
-/* ── the ornament kit: every motif strokes with currentColor ─── */
-svg .s      { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-svg .s--thin{ stroke-width: 1.1; }
-svg .v      { fill: none; stroke: currentColor; stroke-width: .8; opacity: .75; stroke-linecap: round; }
-svg .f      { fill: currentColor; stroke: none; }
-svg .dot    { fill: currentColor; stroke: none; }
-svg .halo   { fill: none; stroke: currentColor; stroke-width: .9; opacity: .5; }
-svg .m-ring { fill: none; stroke: currentColor; stroke-width: 2.6; opacity: .55; }
-svg .m-heart{ fill: color-mix(in srgb, currentColor 30%, #fff); stroke: none; }
+/* ── the ornament kit: ONE gold, drawn in clean line ───────────
+   Every mark strokes with currentColor; each context sets the
+   gold tone (bright on maroon, antique on ivory). No fills,
+   no gradients — just line, dot and halo.                        */
+svg .orn-line       { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+svg .orn-line--thin { stroke-width: 1.1; opacity: .72; }
+svg .orn-dot        { fill: currentColor; stroke: none; }
+svg .orn-halo       { fill: none; stroke: currentColor; stroke-width: .9; opacity: .5; }
 svg .jali-x { stroke: currentColor; stroke-width: .9; fill: none; opacity: .8; }
 
-/* ── the zari kit: filled, gradient-lit ornaments ────────────── */
-/* gold follows the mood palettes via the --champagne variable    */
-svg .g-gold       { fill: url(#grad-gold); stroke: none; }
-svg .g-gold-hi    { fill: url(#grad-gold-hi); stroke: none; }
-svg .g-gold-soft  { fill: url(#grad-gold-soft); stroke: none; }
-svg .g-marigold   { fill: url(#grad-marigold); stroke: none; }
-svg .g-marigold-in{ fill: url(#grad-marigold-in); stroke: none; }
-svg .g-flame      { fill: url(#grad-flame); stroke: none; }
-svg .g-leaf       { fill: url(#grad-leaf); stroke: none; }
-svg .g-lotus      { fill: url(#grad-lotus); stroke: none; }
-svg .g-lotus-2    { fill: url(#grad-lotus-2); stroke: none; }
-svg .g-lotus-hi   { fill: url(#grad-lotus); stroke: none; opacity: .92; }
-svg .g-peacock    { fill: url(#grad-peacock); stroke: none; }
-svg .g-peacock-hi { fill: url(#grad-marigold-in); stroke: none; opacity: .95; }
-.mg-core      { fill: #FFED9E; }
-.leaf-v       { fill: none; stroke: #2C513B; stroke-width: .7; opacity: .7; stroke-linecap: round; }
-.bell-stem    { fill: none; stroke: url(#grad-gold-hi); stroke-width: 1.5; stroke-linecap: round; }
-.bell-clap    { fill: #7A5410; }
-.diya-halo    { fill: url(#grad-halo); stroke: none; }
-.diya-rim     { fill: none; stroke: #7A5410; stroke-width: 1; opacity: .75; stroke-linecap: round; }
-.diya-dot     { fill: #7A5410; }
-.paisley-jewel{ fill: url(#grad-ruby); }
-.paisley-inner{ fill: none; stroke: color-mix(in srgb, var(--champagne) 42%, #5B3F08); stroke-width: 1.05; opacity: .6; stroke-linecap: round; }
-.bell-rim     { fill: none; stroke: #7A5410; stroke-width: .95; opacity: .85; }
-.lotus-base   { fill: none; stroke: url(#grad-gold); stroke-width: 1.2; stroke-linecap: round; }
-.lotus-dot    { fill: #7A5410; }
-.rule         { fill: none; stroke: url(#grad-rule); stroke-width: 1.3; stroke-linecap: round; }
-.rule-garland { fill: none; stroke: url(#grad-rule); stroke-width: 1.6; stroke-linecap: round; }
-.dot-gold     { fill: var(--champagne); stroke: none; }
-.arch-main    { fill: none; stroke: url(#grad-gold); stroke-width: 2; stroke-linecap: round; }
-.arch-thin    { fill: none; stroke: url(#grad-gold); stroke-width: 1.1; stroke-linecap: round; opacity: .85; }
-.arch-halo    { fill: none; stroke: url(#grad-gold-hi); stroke-width: .9; opacity: .55; }
-.rangoli-d    { fill: url(#grad-gold); stroke: none; }
-.rangoli-d-in { fill: #57350a; stroke: none; opacity: .55; }
-.rangoli-halo { fill: none; stroke: url(#grad-gold-hi); stroke-width: .9; opacity: .55; }
-.kalash-shine { fill: none; stroke: #FFF0BE; stroke-width: 1.1; opacity: .5; stroke-linecap: round; }
-.feather-stem { fill: none; stroke: url(#grad-gold-hi); stroke-width: 1.5; stroke-linecap: round; }
-.feather-ring { fill: none; stroke: #FFE9A8; stroke-width: 1; opacity: .85; }
-.feather-barb { fill: none; stroke: #2C513B; stroke-width: 1; opacity: .75; stroke-linecap: round; }
-.bud-stem     { fill: none; stroke: url(#grad-gold-hi); stroke-width: 1.2; stroke-linecap: round; }
-.emblem-arc   { fill: none; stroke: url(#grad-gold); stroke-width: 1.3; stroke-linecap: round; }
-
-/* gradient stops — theme-aware gold, literal light */
-.gs-hi        { stop-color: color-mix(in srgb, var(--champagne) 46%, #FFF3C9); }
-.gs-md        { stop-color: var(--champagne); }
-.gs-lo        { stop-color: color-mix(in srgb, var(--champagne) 56%, #5B3F08); }
-.gs-halo      { stop-color: color-mix(in srgb, var(--champagne) 52%, transparent); }
-.gs-halo-mid  { stop-color: color-mix(in srgb, var(--champagne) 24%, transparent); }
-.gs-halo-edge { stop-color: color-mix(in srgb, var(--champagne) 0%, transparent); }
+/* semantic marks kept from the arch/rule vocabulary */
+.rule         { fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; opacity: .9; }
+.dot-gold     { fill: currentColor; stroke: none; }
+.arch-main    { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.arch-thin    { fill: none; stroke: currentColor; stroke-width: 1.1; stroke-linecap: round; opacity: .85; }
+.arch-halo    { fill: none; stroke: currentColor; stroke-width: .9; opacity: .55; }
+.rangoli-halo { fill: none; stroke: currentColor; stroke-width: .9; opacity: .55; }
+.bud-stem     { fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; opacity: .8; }
+.emblem-arc   { fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; }
 
 .icon { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8;
         stroke-linecap: round; stroke-linejoin: round; flex: none; }

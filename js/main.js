@@ -839,7 +839,7 @@
     list.innerHTML = items.map(function (item) {
       return '<li class="day-word reveal">' +
         '<span class="day-word__bulb" aria-hidden="true">' +
-        '<svg viewBox="-12 -12 24 24"><g class="g-marigold"> <circle r="7.3"/> <circle cx="5.9" cy="0" r="2.55"/><circle cx="4.17" cy="4.17" r="2.55"/> <circle cx="0" cy="5.9" r="2.55"/><circle cx="-4.17" cy="4.17" r="2.55"/> <circle cx="-5.9" cy="0" r="2.55"/><circle cx="-4.17" cy="-4.17" r="2.55"/> <circle cx="0" cy="-5.9" r="2.55"/><circle cx="4.17" cy="-4.17" r="2.55"/> </g> <g class="g-marigold-in"> <circle r="4.5"/> <circle cx="3.2" cy="0" r="1.5"/><circle cx="2.26" cy="2.26" r="1.5"/> <circle cx="0" cy="3.2" r="1.5"/><circle cx="-2.26" cy="2.26" r="1.5"/> <circle cx="-3.2" cy="0" r="1.5"/><circle cx="-2.26" cy="-2.26" r="1.5"/> <circle cx="0" cy="-3.2" r="1.5"/><circle cx="2.26" cy="-2.26" r="1.5"/> </g> <circle class="mg-core" r="1.75"/></svg></span>' +
+        '<svg viewBox="-12 -12 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle r="3.4"/><path d="M0 -10.5 V -6.6 M0 10.5 V 6.6 M-10.5 0 H -6.6 M10.5 0 H 6.6 M-7.4 -7.4 L -4.7 -4.7 M7.4 7.4 L 4.7 4.7 M-7.4 7.4 L -4.7 4.7 M7.4 -7.4 L 4.7 -4.7"/></svg></span>' +
         '<span class="day-word__text" data-editor-path="moments.' + item.index + '">' +
         escapeHTML(item.word.trim()) + '</span></li>';
     }).join('');

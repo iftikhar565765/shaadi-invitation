@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
    SHAADI · rsvp.css — the reply card, an ivory insert with a
-   gold border, paisley corners and the Shubh Vivah watermark
+   gold border, a fine paisley-free frame and the Shubh Vivah watermark
    ═══════════════════════════════════════════════════════════════ */
 
 .scene--rsvp { padding-bottom: calc(var(--space-scene) + 20px); }
@@ -28,17 +28,6 @@
   box-shadow: var(--shadow-card);
   color: var(--ink);
 }
-.rsvp-paisley {
-  position: absolute;
-  width: 40px;
-  color: var(--champagne-soft);
-  filter: drop-shadow(0 1.5px 4px rgba(122, 58, 10, .22));
-}
-.rsvp-paisley--tl { top: 16px; left: 16px; transform: scaleX(-1) rotate(-12deg); }
-.rsvp-paisley--tr { top: 16px; right: 16px; transform: rotate(-12deg); }
-.rsvp-paisley--bl { bottom: 16px; left: 16px; transform: scaleX(-1) rotate(12deg); }
-.rsvp-paisley--br { bottom: 16px; right: 16px; transform: rotate(12deg); }
-
 .rsvp-title {
   font-family: var(--font-editorial);
   font-weight: 400;
